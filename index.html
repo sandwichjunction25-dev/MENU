@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sandwich Junction — Made to Crave | Pure Veg Menu</title>
+    <title>Sandwich Junction — Made to Crave | Pure Veg Digital Menu</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Authentic Brush, Poster Display, and Handwritten Fonts -->
+    <!-- Google Fonts: Distressed Brush, Script, and Condensed Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@700&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@700&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rubik+Dirt&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        parchment: '#F6EFE2',
-                        parchmentDark: '#EAE0CE',
-                        cardCream: '#FBF7F0',
-                        forest: '#173B2B',
-                        rust: '#C44527',
-                        espresso: '#231A16',
-                        goldBadge: '#F59E0B',
-                        charcoalBar: '#141E19'
+                        parchment: '#FDF8F0',
+                        parchmentDeep: '#F4EBDC',
+                        cardCream: '#FFFDF9',
+                        forest: '#1B4332',
+                        rust: '#C84B31',
+                        charcoal: '#1F2421',
+                        goldAccent: '#D97706'
                     },
                     fontFamily: {
                         brush: ['"Caveat Brush"', 'cursive'],
+                        dirt: ['"Rubik Dirt"', 'cursive'],
                         script: ['"Dancing Script"', 'cursive'],
                         poster: ['"Oswald"', 'sans-serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif']
@@ -38,425 +38,472 @@
     </script>
 
     <style>
-        /* Editorial Parchment & Print Craft Styling */
-        :root {
-            --bg-parchment: #F6EFE2;
-            --ink-forest: #173B2B;
-            --ink-rust: #C44527;
-        }
         * {
             -webkit-tap-highlight-color: transparent;
             box-sizing: border-box;
         }
         body {
-            background-color: #1B241E;
-            color: #231A16;
+            background-color: #161D19;
+            color: #1F2421;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
-        /* Tactile Warm Parchment Grain Texture */
-        .parchment-canvas {
-            background-color: #F6EFE2;
-            background-image: 
-                radial-gradient(rgba(196, 69, 39, 0.04) 1px, transparent 0),
-                radial-gradient(rgba(23, 59, 43, 0.045) 1px, #F6EFE2 0);
+        /* Warm Editorial Parchment Texture */
+        .parchment-sheet {
+            background-color: #FDF8F0;
+            background-image:
+                radial-gradient(rgba(200, 75, 49, 0.035) 1px, transparent 0),
+                radial-gradient(rgba(27, 67, 50, 0.04) 1px, #FDF8F0 0);
             background-size: 22px 22px;
             background-position: 0 0, 11px 11px;
         }
-        /* Distressed Hand-Painted Logo Typography */
+        /* Original Poster Distressed Brush Logo */
         .og-logo-green {
             font-family: 'Caveat Brush', cursive;
-            color: #173B2B;
-            letter-spacing: 0.03em;
-            line-height: 0.86;
+            color: #1B4332;
+            letter-spacing: 0.025em;
+            line-height: 0.85;
             transform: rotate(-1.5deg);
-            text-shadow: 1px 2px 0px rgba(255,255,255,0.65), 0px 3px 6px rgba(23,59,43,0.12);
-            filter: url(#brush-roughness);
+            text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.75), 0px 3px 6px rgba(27, 67, 50, 0.12);
+            filter: url(#brush-edge);
         }
-        .og-logo-rust {
+        .og-logo-orange {
             font-family: 'Caveat Brush', cursive;
-            color: #C44527;
-            letter-spacing: 0.04em;
+            color: #C84B31;
+            letter-spacing: 0.035em;
             line-height: 0.88;
             transform: rotate(-1deg);
-            text-shadow: 1px 2px 0px rgba(255,255,255,0.65);
-            filter: url(#brush-roughness);
+            text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.75);
+            filter: url(#brush-edge);
         }
-        /* Classic Print Menu Dotted Leader Line */
+        /* Dotted Leader for Classic Menu Readability */
         .dotted-leader {
             flex-grow: 1;
-            border-bottom: 1.5px dotted #C6B69C;
+            border-bottom: 1.5px dotted #C8B9A6;
             margin: 0 6px;
             position: relative;
             top: -4px;
-            min-width: 8px;
+            min-width: 10px;
         }
-        /* Hide Scrollbars on Category Pill Bar */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Smooth Tab Transition */
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(6px); }
+        /* Framed Menu Card */
+        .menu-card-frame {
+            border: 1.5px solid rgba(27, 67, 50, 0.2);
+            box-shadow: inset 0 0 0 3px #FFFDF9, inset 0 0 0 4px rgba(200, 75, 49, 0.2);
+        }
+        /* Smooth Category Switch Animation */
+        @keyframes fadeUpQuick {
+            from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .tab-panel-enter {
-            animation: fadeSlideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        /* Vintage Double Border Frame */
-        .menu-frame {
-            border: 1.5px solid rgba(23, 59, 43, 0.22);
-            box-shadow: inset 0 0 0 3px #F6EFE2, inset 0 0 0 4px rgba(196, 69, 39, 0.22);
+        .stage-animate {
+            animation: fadeUpQuick 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
 </head>
 <body class="min-h-screen flex justify-center items-start">
 
-    <!-- Subtle SVG Filter to give the OG Logo authentic painted brush edges -->
+    <!-- SVG Brush Roughness Filter for Authentic Poster Logo -->
     <svg class="hidden" width="0" height="0" aria-hidden="true">
         <defs>
-            <filter id="brush-roughness" x="-5%" y="-5%" width="110%" height="110%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G" />
+            <filter id="brush-edge" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.085" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.35" xChannelSelector="R" yChannelSelector="G" />
             </filter>
         </defs>
     </svg>
 
     <!-- =========================================================================
-         📱 MAIN ARTISAN MENU CONTAINER (FITS ONE MOBILE SCREEN EFFORTLESSLY)
+         📱 MOBILE-FIRST MENU CONTAINER (480px MAX WIDTH)
          ========================================================================= -->
-    <div class="w-full max-w-[480px] min-h-screen parchment-canvas shadow-2xl relative flex flex-col justify-between pb-[76px] border-x border-stone-800/30">
+    <div class="w-full max-w-[480px] min-h-screen parchment-sheet shadow-2xl relative flex flex-col justify-between pb-[74px] border-x border-stone-800/25">
 
-        <!-- Top Decorative Botanical Corner Vignette -->
-        <div class="pointer-events-none absolute top-0 left-0 w-24 h-24 opacity-20 overflow-hidden">
-            <svg viewBox="0 0 100 100" fill="none" class="w-full h-full text-forest">
-                <path d="M0 0C40 5 70 30 85 75C50 65 20 40 0 0Z" fill="currentColor"/>
-                <path d="M0 20C30 25 55 45 65 85C35 75 15 55 0 20Z" fill="currentColor" opacity="0.6"/>
-            </svg>
+        <!-- =====================================================================
+             🔐 FLOATING STAFF CLOUD BAR (ONLY VISIBLE WITH ?key=sandwich2026)
+             ===================================================================== -->
+        <div id="staff-admin-bar" class="hidden sticky top-0 z-40 bg-forest text-white px-3 py-2 border-b-2 border-goldAccent shadow-lg items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                <span class="font-poster text-xs font-bold uppercase tracking-wider truncate">🔓 Staff Cloud Editor Active</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+                <button
+                    onclick="openCloudEditorModal()"
+                    class="bg-rust hover:bg-[#b23f27] active:scale-95 text-white font-poster text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-xs transition"
+                >
+                    Edit Menu & Save to Cloud
+                </button>
+                <button
+                    onclick="promptResetToDefaults()"
+                    class="bg-white/15 hover:bg-white/25 text-amber-200 font-poster text-[11px] font-semibold uppercase tracking-wider px-2 py-1 rounded-lg transition"
+                    title="Restore Factory Menu"
+                >
+                    Reset to Defaults
+                </button>
+            </div>
         </div>
 
         <!-- =====================================================================
-             1. AUTHENTIC "OG" POSTER HEADER & LOGO
+             1. TOP BRANDING & ORIGINAL POSTER LOGO HEADER
              ===================================================================== -->
-        <header class="relative px-4 pt-3.5 pb-3 border-b border-amber-950/15 bg-gradient-to-b from-[#EFE4D2] via-[#F6EFE2] to-[#F6EFE2]">
+        <header class="relative px-3.5 pt-3 pb-2.5 border-b border-amber-950/15 bg-gradient-to-b from-[#F4EBDC] via-[#FDF8F0] to-[#FDF8F0]">
             
-            <!-- Top Row: Pure Veg Badge (5 Taps unlocks Stealth Staff Editor) + Live Dish Photo Peek Hint -->
-            <div class="flex items-center justify-between">
-                <!-- PURE VEG BADGE (STEALTH TRIGGER) -->
-                <button 
-                    id="pure-veg-trigger"
-                    onclick="handleStealthTap()"
-                    title="100% Pure Vegetarian"
-                    class="inline-flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-md border border-forest/25 shadow-2xs select-none active:scale-95 transition"
-                >
+            <!-- Top Status Row: Pure Veg Badge + Tap Dish for Photo Hint -->
+            <div class="flex items-center justify-between gap-2">
+                <!-- Static Pure Veg Badge (No 5-tap unlock) -->
+                <div class="inline-flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-md border border-forest/25 shadow-2xs select-none">
                     <span class="w-4 h-4 border-[1.8px] border-[#15803D] flex items-center justify-center rounded-[2px] bg-white">
                         <span class="w-2 h-2 rounded-full bg-[#15803D]"></span>
                     </span>
-                    <span class="font-poster text-xs font-bold tracking-wide text-forest uppercase">Pure Veg</span>
-                </button>
+                    <span class="font-poster text-xs font-bold tracking-wide text-forest uppercase">PURE VEG</span>
+                </div>
 
-                <!-- Tap-any-dish for realistic photo badge -->
-                <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-stone-600 bg-amber-950/5 px-2.5 py-1 rounded-full border border-amber-950/10">
-                    <svg class="w-3.5 h-3.5 text-rust" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                        <circle cx="12" cy="13" r="3"/>
-                    </svg>
-                    <span>Tap any dish for photo</span>
+                <!-- Photo Lightbox Hint Pill -->
+                <div class="inline-flex items-center gap-1 text-[11px] font-semibold text-stone-700 bg-amber-950/5 px-2.5 py-1 rounded-full border border-amber-950/10">
+                    <span>📷 Tap any dish for photo</span>
                 </div>
             </div>
 
-            <!-- Main OG Brand Lockup + Hero Collage -->
+            <!-- Main Brand Lockup (Left) + House Special Thumbnail Card (Right) -->
             <div class="mt-2.5 flex items-center justify-between gap-2">
                 
-                <!-- Left: Replicated OG Poster Logo -->
+                <!-- Left: Original Poster Logo Recreation -->
                 <div class="flex flex-col items-start pl-0.5 min-w-0">
-                    <!-- Hand-Drawn Ink Double-Decker Sandwich Icon (Exact Poster Style) -->
-                    <div class="mb-0.5 text-espresso self-center sm:self-start">
+                    <!-- Hand-Drawn Double-Decker Sandwich SVG Icon -->
+                    <div class="mb-0.5 text-charcoal self-center sm:self-start">
                         <svg class="w-10 h-8 sm:w-11 sm:h-9" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- Top Bread Slice -->
-                            <path d="M8 16L32 5L56 16L32 26L8 16Z" fill="#F5DEC0" stroke="#1E1815" stroke-width="2.4" stroke-linejoin="round"/>
-                            <path d="M16 15L32 8.5L48 15" stroke="#C44527" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
-                            <!-- Frilly Lettuce & Tomato Layer 1 -->
-                            <path d="M7 20C11 23 15 19 19 22C23 25 27 21 32 25C37 21 41 25 45 22C49 19 53 23 57 20" stroke="#173B2B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Cheese Melt Corners -->
-                            <path d="M14 23L18 29L24 25" fill="#F59E0B" stroke="#1E1815" stroke-width="1.8" stroke-linejoin="round"/>
-                            <path d="M50 23L46 29L40 25" fill="#F59E0B" stroke="#1E1815" stroke-width="1.8" stroke-linejoin="round"/>
-                            <!-- Middle Club Bread Layer -->
-                            <path d="M8 26L32 35L56 26" stroke="#1E1815" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Veggie & Paneer Layer 2 -->
-                            <path d="M9 31C14 34 19 30 24 34C28 37 36 37 40 34C45 30 50 34 55 31" stroke="#C44527" stroke-width="2.4" stroke-linecap="round"/>
-                            <!-- Bottom Bread Base -->
-                            <path d="M8 35L32 45L56 35" stroke="#1E1815" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 35V39L32 49L56 39V35" fill="#E6C49A" stroke="#1E1815" stroke-width="2.3" stroke-linejoin="round"/>
+                            <path d="M8 16L32 5L56 16L32 26L8 16Z" fill="#F5DEC0" stroke="#1F2421" stroke-width="2.4" stroke-linejoin="round"/>
+                            <path d="M16 15L32 8.5L48 15" stroke="#C84B31" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
+                            <!-- Lettuce & Veggie Frill -->
+                            <path d="M7 20C11 23 15 19 19 22C23 25 27 21 32 25C37 21 41 25 45 22C49 19 53 23 57 20" stroke="#1B4332" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Melted Cheese Corners -->
+                            <path d="M14 23L18 29L24 25" fill="#D97706" stroke="#1F2421" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M50 23L46 29L40 25" fill="#D97706" stroke="#1F2421" stroke-width="1.8" stroke-linejoin="round"/>
+                            <!-- Middle Bread Slice -->
+                            <path d="M8 26L32 35L56 26" stroke="#1F2421" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Spiced Filling Layer -->
+                            <path d="M9 31C14 34 19 30 24 34C28 37 36 37 40 34C45 30 50 34 55 31" stroke="#C84B31" stroke-width="2.4" stroke-linecap="round"/>
+                            <!-- Bottom Bread Slice -->
+                            <path d="M8 35L32 45L56 35" stroke="#1F2421" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 35V39L32 49L56 39V35" fill="#E6C49A" stroke="#1F2421" stroke-width="2.3" stroke-linejoin="round"/>
                         </svg>
                     </div>
 
-                    <!-- "SANDWICH" in Distressed Forest Green Brush -->
-                    <h1 id="brand-title-1" class="og-logo-green text-[38px] sm:text-[46px] uppercase select-none">
+                    <!-- "SANDWICH" in Forest Green Brush Font -->
+                    <h1 id="brand-title-1" class="og-logo-green text-[38px] sm:text-[44px] uppercase select-none">
                         SANDWICH
                     </h1>
 
-                    <!-- "JUNCTION" in Distressed Burnt Rust Brush -->
-                    <h2 id="brand-title-2" class="og-logo-rust text-[30px] sm:text-[36px] uppercase -mt-1 select-none">
+                    <!-- "JUNCTION" in Burnt Orange Brush Font -->
+                    <h2 id="brand-title-2" class="og-logo-orange text-[30px] sm:text-[35px] uppercase -mt-1 select-none">
                         JUNCTION
                     </h2>
 
-                    <!-- "Made to Crave." in Script + Tapered Rust Underline -->
+                    <!-- "Made to Crave." in Cursive Script + Tapered Brush Underline -->
                     <div class="relative mt-1 flex flex-col items-center self-center sm:self-start">
-                        <p id="brand-tagline" class="font-script text-[20px] font-bold text-espresso leading-none whitespace-nowrap">
+                        <p id="brand-tagline" class="font-script text-[20px] font-bold text-charcoal leading-none whitespace-nowrap">
                             Made to Crave.
                         </p>
                         <svg class="w-28 h-2.5 -mt-0.5 text-rust" viewBox="0 0 120 10" fill="none">
-                            <path d="M4 7C38 2 82 2 116 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                            <path d="M4 7C38 2 82 2 116 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
 
-                <!-- Right: Realistic Food Trio Showcase (Click to enlarge) -->
-                <div class="relative w-[130px] h-[112px] sm:w-[155px] sm:h-[126px] shrink-0">
-                    <!-- Main Panini Club Photo -->
-                    <div 
-                        onclick="openDishLightbox('Signature Grilled Club', 'Triple-layered toasted sourdough packed with spiced corn, paneer & herbs.', 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85', '₹69 / ₹109')"
+                <!-- Right: Featured Club Sandwich Photo Card -->
+                <div class="relative w-[128px] h-[110px] sm:w-[148px] sm:h-[122px] shrink-0">
+                    <div
+                        onclick="openDishModal('Veg Club Sandwich', 'The ultimate classic with layers of fresh veggies & crisp veggies.', document.getElementById('header-hero-img').src, 'Half ₹69 • Full ₹109')"
                         class="cursor-pointer w-full h-full rounded-2xl overflow-hidden border-2 border-white shadow-md bg-stone-800 relative group"
                     >
-                        <img 
+                        <img
                             id="header-hero-img"
-                            src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80" 
-                            alt="Sandwich Junction Signature" 
+                            src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"
+                            alt="Sandwich Junction House Special"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                            onerror="this.src='https://placehold.co/400x320/1B4332/FDF8F0?text=Sandwich+Junction'"
                         >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent flex items-end justify-center p-1.5">
-                            <span class="text-[9.5px] font-bold text-amber-200 tracking-wide uppercase whitespace-nowrap">★ House Special</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent flex items-end justify-center p-1.5">
+                            <span class="text-[9.5px] font-bold text-amber-300 tracking-wider uppercase whitespace-nowrap">★ HOUSE SPECIAL</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- =================================================================
-                 2. ZERO-SCROLL 3x2 CATEGORY GRID SWITCHER (ALL VISIBLE AT ONCE)
+                 2. 3x3 PRIORITY CATEGORY GRID (ZERO SCROLLING, ZERO CUTOFFS)
                  ================================================================= -->
-            <div class="mt-3.5 pt-2.5 border-t border-amber-950/10">
-                <div id="category-tabs-bar" class="grid grid-cols-3 gap-1.5" role="tablist">
-                    <!-- Dynamically populated 3x2 tactile category buttons -->
+            <div class="mt-3 pt-2.5 border-t border-amber-950/10">
+                <div id="category-grid" class="grid grid-cols-3 gap-1.5" role="tablist">
+                    <!-- Populated dynamically with all 9 categories in a 3x3 grid -->
                 </div>
             </div>
         </header>
 
         <!-- =====================================================================
-             3. SINGLE-SCREEN ACTIVE CATEGORY SHEET (NO LONG SCROLLING)
+             3. ACTIVE CATEGORY MENU SHEET & SINGLE-LINE ADD-ONS BAR
              ===================================================================== -->
-        <main class="flex-1 px-3.5 pt-3 pb-2 flex flex-col justify-between">
-            <div id="active-category-stage" class="menu-frame bg-cardCream rounded-2xl p-3.5 shadow-sm transition-all">
-                <!-- Populated dynamically with the selected category -->
+        <main class="flex-1 px-3 pt-2.5 pb-2 flex flex-col justify-between">
+            <!-- Active Category Card -->
+            <div id="active-category-card" class="menu-card-frame bg-cardCream rounded-2xl p-3 shadow-xs">
+                <!-- Dynamically rendered active category items -->
             </div>
 
-            <!-- Always-Visible Compact Add-Ons Strip (Directly from Poster Bottom) -->
-            <div class="mt-2.5 bg-[#EFE5D4] border border-amber-950/20 rounded-xl px-2.5 py-2 flex items-center justify-between gap-2 shadow-2xs">
+            <!-- Single-Line Compact Add-Ons Bar -->
+            <div class="mt-2.5 bg-[#F4EBDC] border border-amber-950/20 rounded-xl px-2.5 py-2 flex items-center justify-between gap-1.5 shadow-2xs overflow-x-auto">
                 <div class="flex items-center gap-1 shrink-0">
-                    <span class="text-rust font-bold text-[11px]">✦</span>
-                    <span class="font-poster text-[11px] font-bold tracking-wider uppercase text-espresso whitespace-nowrap">Add-Ons</span>
-                    <span class="text-rust font-bold text-[11px]">✦</span>
+                    <span class="text-xs leading-none">✨</span>
+                    <span class="font-poster text-[11.5px] font-bold uppercase tracking-wider text-charcoal whitespace-nowrap">ADD-ONS:</span>
                 </div>
-                <div id="addons-strip-items" class="flex items-center justify-end gap-1.5 flex-wrap text-xs font-bold text-espresso">
-                    <!-- Populated from MENU_DATA.addons -->
+                <div id="addons-bar" class="flex items-center justify-end gap-1.5 shrink-0">
+                    <!-- Populated from menuData.addons -->
                 </div>
             </div>
         </main>
 
         <!-- =====================================================================
-             4. POSTER-MATCHED STICKY FOOTER BAR (READ-ONLY INFO + CALL/WHATSAPP)
+             4. STICKY SINGLE-LINE FOOTER BAR (WHATSAPP, CALL, FREE DELIVERY)
              ===================================================================== -->
         <footer class="fixed bottom-0 left-0 right-0 z-30 flex justify-center pointer-events-none">
-            <div class="w-full max-w-[480px] bg-charcoalBar text-parchment px-2.5 py-2 border-t-2 border-rust/80 shadow-2xl pointer-events-auto flex items-center justify-between gap-1.5">
+            <div class="w-full max-w-[480px] bg-charcoal text-parchment px-2.5 py-2 border-t-2 border-rust shadow-2xl pointer-events-auto flex items-center justify-between gap-1.5">
                 
-                <!-- WhatsApp & Call Quick Links -->
+                <!-- Left: Single-Line WhatsApp & Call Buttons -->
                 <div class="flex items-center gap-1.5 shrink-0">
-                    <a 
-                        id="footer-wa-link"
-                        href="https://wa.me/918696176974?text=Hi%20Sandwich%20Junction!%20I'm%20checking%20your%20menu." 
+                    <a
+                        id="footer-wa-btn"
+                        href="https://wa.me/918696176974?text=Hi%20Sandwich%20Junction!%20I%20would%20like%20to%20place%20an%20order."
                         target="_blank"
                         rel="noopener"
-                        class="flex items-center gap-1.5 bg-[#1F4E38] hover:bg-[#276347] active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-emerald-500/30 transition shrink-0"
+                        class="flex items-center gap-1.5 bg-forest hover:bg-[#235741] active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-emerald-500/30 transition shrink-0"
                     >
                         <svg class="w-3.5 h-3.5 text-[#4ADE80] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.556 4.119 1.528 5.847l-1.528 5.581 5.713-1.498c1.676.912 3.597 1.434 5.643 1.434 6.627 0 12-5.373 12-12s-5.373-12-12.356-12z"/>
                         </svg>
                         <div class="leading-tight">
-                            <span class="block text-[8.5px] text-amber-300 font-bold uppercase tracking-wider whitespace-nowrap">WhatsApp</span>
-                            <span id="footer-phone-1" class="font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
+                            <span class="block text-[8px] text-amber-300 font-bold uppercase tracking-wider whitespace-nowrap">WhatsApp</span>
+                            <span id="footer-wa-text" class="block font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
                         </div>
                     </a>
 
-                    <a 
-                        id="footer-call-link"
-                        href="tel:+918696176974" 
+                    <a
+                        id="footer-call-btn"
+                        href="tel:+918696176974"
                         class="flex items-center gap-1.5 bg-stone-800 hover:bg-stone-700 active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-stone-600 transition shrink-0"
                     >
                         <svg class="w-3 h-3 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/>
                         </svg>
                         <div class="leading-tight">
-                            <span class="block text-[8.5px] text-stone-300 font-bold uppercase tracking-wider whitespace-nowrap">Call Us</span>
-                            <span id="footer-phone-2" class="font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
+                            <span class="block text-[8px] text-stone-300 font-bold uppercase tracking-wider whitespace-nowrap">Call Us</span>
+                            <span id="footer-call-text" class="block font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Right: Free Delivery Badge -->
-                <div class="flex items-center gap-1 text-right shrink-0">
-                    <span class="text-base leading-none hidden xs:inline">🛵</span>
-                    <div class="leading-tight">
-                        <span class="block font-poster text-[11px] font-bold text-amber-400 tracking-wide uppercase whitespace-nowrap">🛵 Free Delivery</span>
-                        <span id="footer-free-delivery" class="block text-[9.5px] font-semibold text-stone-200 whitespace-nowrap">Orders Above ₹199</span>
-                    </div>
+                <div class="text-right shrink-0">
+                    <span class="block font-poster text-[11px] font-bold text-amber-400 tracking-wide uppercase whitespace-nowrap">🛵 FREE DELIVERY</span>
+                    <span id="footer-delivery-text" class="block text-[9.5px] font-semibold text-stone-200 whitespace-nowrap">Above ₹199</span>
                 </div>
             </div>
         </footer>
     </div>
 
     <!-- =========================================================================
-         📸 REALISTIC DISH PHOTO PEEK LIGHTBOX (OPENS WHEN A CUSTOMER TAPS AN ITEM)
+         📸 DISH PHOTO LIGHTBOX MODAL (OPENS WHEN CUSTOMER TAPS ANY DISH)
          ========================================================================= -->
-    <div id="dish-lightbox" onclick="closeDishLightbox()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs hidden items-center justify-center p-4">
-        <div onclick="event.stopPropagation()" class="w-full max-w-sm bg-cardCream rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-900/20 animate-[fadeSlideUp_0.18s_ease-out]">
+    <div id="dish-lightbox" onclick="closeDishModal()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div onclick="event.stopPropagation()" class="w-full max-w-sm bg-cardCream rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-950/20 stage-animate">
             <div class="relative h-60 w-full bg-stone-900">
-                <img id="lightbox-img" src="" alt="Dish preview" class="w-full h-full object-cover">
-                <button onclick="closeDishLightbox()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/65 text-white font-bold flex items-center justify-center text-sm hover:bg-black">✕</button>
-                <div id="lightbox-price-pill" class="absolute bottom-3 right-3 bg-rust text-white font-poster font-bold text-sm px-3 py-1 rounded-lg shadow-lg"></div>
+                <img
+                    id="lightbox-img"
+                    src=""
+                    alt="Dish Photo"
+                    class="w-full h-full object-cover"
+                    onerror="this.src='https://placehold.co/600x400/1B4332/FDF8F0?text=Sandwich+Junction'"
+                >
+                <button onclick="closeDishModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/65 text-white font-bold flex items-center justify-center text-sm hover:bg-black">✕</button>
+                <div id="lightbox-price" class="absolute bottom-3 right-3 bg-rust text-white font-poster font-bold text-sm px-3 py-1 rounded-lg shadow-lg"></div>
             </div>
             <div class="p-4">
                 <div class="flex items-center gap-1.5 mb-1">
                     <span class="w-3.5 h-3.5 border border-green-700 flex items-center justify-center rounded-[2px]">
                         <span class="w-1.5 h-1.5 rounded-full bg-green-700"></span>
                     </span>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-forest">Freshly Prepared • Pure Veg</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-forest">100% Pure Vegetarian • Freshly Prepared</span>
                 </div>
-                <h3 id="lightbox-title" class="font-poster text-xl font-bold text-espresso uppercase"></h3>
+                <h3 id="lightbox-title" class="font-poster text-xl font-bold text-charcoal uppercase"></h3>
                 <p id="lightbox-desc" class="text-xs text-stone-600 mt-1 leading-relaxed"></p>
             </div>
         </div>
     </div>
 
     <!-- =========================================================================
-         🔐 STEALTH STAFF / OWNER ADMIN STUDIO (INVISIBLE TO CUSTOMERS)
-         =========================================================================
-         How to open:
-         1. Tap the "Pure Veg" badge in the top-left corner 5 times quickly, OR
-         2. Add `?edit=1` or `#edit` to the end of your website URL.
-    ========================================================================== -->
-    <div id="stealth-admin-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden items-center justify-center p-3">
+         ☁️ STAFF CLOUD EDITOR MODAL (SAVES DIRECTLY TO FIREBASE FIRESTORE)
+         ========================================================================= -->
+    <div id="cloud-editor-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden items-center justify-center p-2.5 sm:p-4">
         <div class="w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-stone-200 max-h-[92vh] flex flex-col overflow-hidden">
             
             <!-- Modal Header -->
-            <div class="bg-forest text-white px-4 py-3 flex items-center justify-between">
+            <div class="bg-forest text-white px-4 py-3 flex items-center justify-between shrink-0">
                 <div>
                     <div class="flex items-center gap-2">
-                        <span class="text-xs bg-amber-400 text-charcoalBar font-extrabold px-2 py-0.5 rounded uppercase">Staff Mode</span>
-                        <h3 class="font-poster text-base font-bold uppercase tracking-wide">Menu & Photo Manager</h3>
+                        <span class="text-[10px] bg-amber-400 text-charcoal font-extrabold px-2 py-0.5 rounded uppercase">Firebase Live Sync</span>
+                        <h3 class="font-poster text-base font-bold uppercase tracking-wide">Cloud Menu Manager</h3>
                     </div>
-                    <p class="text-[11px] text-emerald-200 mt-0.5">Edit prices, swap realistic photos, or download your updated HTML file</p>
+                    <p class="text-[11px] text-emerald-200 mt-0.5">Changes publish live to all QR scanners immediately</p>
                 </div>
-                <button onclick="closeAdminModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold flex items-center justify-center">✕</button>
+                <button onclick="closeCloudEditorModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold flex items-center justify-center">✕</button>
             </div>
 
-            <!-- Admin Category Selector & Item Editor -->
-            <div class="p-4 overflow-y-auto space-y-4 flex-1 text-xs">
+            <!-- Modal Body -->
+            <div class="p-3.5 sm:p-4 overflow-y-auto space-y-4 flex-1 text-xs">
                 
-                <!-- Quick Guide Banner -->
-                <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-stone-700 leading-relaxed">
-                    <strong class="text-espresso">How this keeps your QR Code active forever:</strong>
-                    <ol class="list-decimal list-inside mt-1 space-y-0.5 text-[11px]">
-                        <li>Edit any item name, price, or paste a realistic food photo URL below.</li>
-                        <li>Tap <strong>"Save & Preview Here"</strong> to test immediately on this device.</li>
-                        <li>Tap <strong>"Download Updated index.html"</strong> and upload that file to your host (GitHub Pages / Netlify). Your printed QR code never changes!</li>
-                    </ol>
-                </div>
+                <!-- Status Banner inside Editor -->
+                <div id="cloud-save-status" class="hidden rounded-xl px-3 py-2 font-semibold text-xs items-center justify-between"></div>
 
-                <!-- Kitchen Global Info -->
-                <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                    <div class="font-bold text-espresso uppercase tracking-wider text-[11px]">Phone & Free Delivery Settings</div>
+                <!-- Global Kitchen Settings & Add-Ons Editor -->
+                <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2.5">
+                    <div class="font-poster font-bold text-charcoal uppercase tracking-wider text-xs border-b border-stone-200 pb-1">
+                        1. Contact, Delivery & Add-Ons
+                    </div>
                     <div class="grid grid-cols-2 gap-2">
                         <div>
-                            <label class="block text-[10px] font-semibold text-stone-500 mb-0.5">Display Phone</label>
-                            <input id="adm-display-phone" type="text" class="w-full border border-stone-300 rounded-lg px-2.5 py-1.5 font-semibold" onchange="updateGlobalField('displayPhone', this.value)">
+                            <label class="block text-[10px] font-bold text-stone-500 mb-0.5">Display Phone</label>
+                            <input id="adm-phone-display" type="text" class="w-full border border-stone-300 rounded-lg px-2 py-1.5 font-semibold" oninput="menuData.kitchenInfo.displayPhone = this.value">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-semibold text-stone-500 mb-0.5">WhatsApp (with 91)</label>
-                            <input id="adm-wa-phone" type="text" class="w-full border border-stone-300 rounded-lg px-2.5 py-1.5 font-semibold" onchange="updateGlobalField('whatsappNumber', this.value)">
+                            <label class="block text-[10px] font-bold text-stone-500 mb-0.5">WhatsApp Number (with 91)</label>
+                            <input id="adm-phone-wa" type="text" class="w-full border border-stone-300 rounded-lg px-2 py-1.5 font-semibold" oninput="menuData.kitchenInfo.whatsappNumber = this.value">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-semibold text-stone-500 mb-0.5">Free Delivery Text</label>
-                            <input id="adm-free-del" type="text" class="w-full border border-stone-300 rounded-lg px-2.5 py-1.5 font-semibold" onchange="updateGlobalField('freeDeliveryText', this.value)">
+                            <label class="block text-[10px] font-bold text-stone-500 mb-0.5">Free Delivery Badge</label>
+                            <input id="adm-free-delivery" type="text" class="w-full border border-stone-300 rounded-lg px-2 py-1.5 font-semibold" oninput="menuData.kitchenInfo.freeDeliveryText = this.value">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-semibold text-stone-500 mb-0.5">Header Hero Photo URL</label>
-                            <input id="adm-hero-img" type="text" class="w-full border border-stone-300 rounded-lg px-2.5 py-1.5 font-mono text-[10px]" onchange="updateGlobalField('heroImage', this.value)">
+                            <label class="block text-[10px] font-bold text-stone-500 mb-0.5">Header Special Photo URL</label>
+                            <input id="adm-hero-url" type="text" class="w-full border border-stone-300 rounded-lg px-2 py-1.5 font-mono text-[10px]" oninput="menuData.kitchenInfo.heroImage = this.value">
                         </div>
+                    </div>
+
+                    <!-- Add-ons Editor -->
+                    <div class="pt-1">
+                        <div class="flex items-center justify-between mb-1">
+                            <label class="text-[10px] font-bold uppercase text-stone-500">Add-Ons Bar Items</label>
+                            <button type="button" onclick="addAddonItem()" class="text-[10px] font-bold text-forest hover:underline">+ Add Add-On</button>
+                        </div>
+                        <div id="adm-addons-list" class="space-y-1.5"></div>
                     </div>
                 </div>
 
-                <!-- Select Tab to Edit -->
-                <div>
-                    <label class="block font-bold text-espresso uppercase tracking-wider text-[11px] mb-1">Select Category Tab to Edit:</label>
-                    <select id="adm-category-select" onchange="renderAdminCategoryEditor(this.value)" class="w-full bg-stone-100 border border-stone-300 rounded-xl px-3 py-2 font-bold text-espresso focus:outline-none focus:border-forest">
-                    </select>
-                </div>
+                <!-- Category Selector -->
+                <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2.5">
+                    <div class="font-poster font-bold text-charcoal uppercase tracking-wider text-xs border-b border-stone-200 pb-1">
+                        2. Edit Category Dishes & Photos
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase text-stone-500 mb-1">Choose Category (1 to 9):</label>
+                        <select
+                            id="adm-cat-select"
+                            onchange="renderAdminCategoryItems(this.value)"
+                            class="w-full bg-white border border-stone-300 rounded-xl px-3 py-2 font-bold text-charcoal focus:outline-none focus:border-forest"
+                        ></select>
+                    </div>
 
-                <!-- Dynamic Category Banner & Items Form -->
-                <div id="adm-items-container" class="space-y-3"></div>
+                    <!-- Category Items Container -->
+                    <div id="adm-cat-items" class="space-y-2.5 pt-1"></div>
+                </div>
             </div>
 
-            <!-- Modal Footer Actions -->
-            <div class="bg-stone-100 px-4 py-3 border-t border-stone-200 flex flex-wrap items-center justify-between gap-2">
-                <button onclick="resetMenuToFactory()" class="text-[11px] font-semibold text-red-600 hover:underline">
-                    Reset to Default
+            <!-- Modal Footer with Prominent Green Cloud Save Button -->
+            <div class="bg-stone-100 px-4 py-3 border-t border-stone-200 flex items-center justify-between gap-2 shrink-0">
+                <button
+                    type="button"
+                    onclick="promptResetToDefaults()"
+                    class="text-[11px] font-bold text-red-600 hover:bg-red-50 px-2.5 py-1.5 rounded-lg transition"
+                >
+                    Reset Defaults
                 </button>
                 <div class="flex items-center gap-2">
-                    <button 
-                        onclick="saveAdminPreview()" 
-                        class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-black text-white font-bold text-xs transition"
+                    <button
+                        type="button"
+                        onclick="closeCloudEditorModal()"
+                        class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-charcoal font-bold text-xs transition"
                     >
-                        Save & Preview Here
+                        Close
                     </button>
-                    <button 
-                        onclick="downloadUpdatedHtmlFile()" 
-                        class="px-4 py-2 rounded-xl bg-rust hover:opacity-95 text-white font-bold text-xs shadow-md transition flex items-center gap-1.5"
+                    <button
+                        id="btn-cloud-save"
+                        type="button"
+                        onclick="saveMenuToFirebaseCloud()"
+                        class="px-4 py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] active:scale-95 text-white font-poster font-bold text-xs uppercase tracking-wider shadow-md transition flex items-center gap-1.5"
                     >
-                        <span>⬇ Download Updated index.html</span>
+                        <span>☁️ Save & Publish Live</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        /* ============================================================================
-           📋 MASTER MENU DATA (SANDWICH JUNCTION — ALL TYPOS FIXED & REAL PHOTOS)
-           ============================================================================ */
-        /*__MENU_DATA_START__*/
-        let MENU_DATA = {
+    <!-- Custom Reset Confirmation Modal (No browser confirm/alert) -->
+    <div id="reset-confirm-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="w-full max-w-xs bg-white rounded-2xl p-4 shadow-2xl border border-stone-200 text-center space-y-3">
+            <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto font-bold text-lg">!</div>
+            <h4 class="font-poster text-base font-bold uppercase text-charcoal">Restore Factory Menu?</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">This will reset all categories, dishes, and prices in the cloud database back to the original Sandwich Junction poster defaults.</p>
+            <div class="flex items-center justify-center gap-2 pt-1">
+                <button onclick="closeResetPrompt()" class="flex-1 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-charcoal font-bold text-xs">Cancel</button>
+                <button onclick="confirmResetToDefaults()" class="flex-1 py-2 rounded-xl bg-rust hover:opacity-95 text-white font-bold text-xs">Yes, Reset Cloud</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Toast Notification -->
+    <div id="live-toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden bg-forest text-white px-4 py-2 rounded-full shadow-xl border border-emerald-400/40 text-xs font-bold items-center gap-2">
+        <span id="live-toast-text">Saved to Cloud!</span>
+    </div>
+
+    <!-- =========================================================================
+         🔥 APPLICATION LOGIC & FIREBASE v10 MODULAR SDK INTEGRATION
+         ========================================================================= -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // 1. Owner's Exact Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRfEY2RzpQM8mOIWZzJWEGv2NVwbgH47s",
+            authDomain: "sandwich-junction-menu.firebaseapp.com",
+            projectId: "sandwich-junction-menu",
+            storageBucket: "sandwich-junction-menu.firebasestorage.app",
+            messagingSenderId: "578535081416",
+            appId: "1:578535081416:web:8b901a63d4950d70bdacfd"
+        };
+
+        // 2. Complete Default Menu Data (All 9 Categories + Add-Ons)
+        const DEFAULT_MENU_DATA = {
             kitchenInfo: {
                 name: "SANDWICH",
                 subName: "JUNCTION",
                 tagline: "Made to Crave.",
                 displayPhone: "86961 76974",
                 whatsappNumber: "918696176974",
-                freeDeliveryText: "Orders Above ₹199",
+                freeDeliveryText: "Above ₹199",
                 heroImage: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"
             },
             addons: [
-                { name: "Extra Cheese", price: 20 },
-                { name: "Extra Sauce", price: 10 }
+                { name: "EXTRA CHEESE", price: 20 },
+                { name: "EXTRA SAUCE", price: 10 }
             ],
             tabs: [
                 {
                     id: "sandwiches",
-                    tabLabel: "Sandwiches",
+                    tabLabel: "SANDWICHES",
                     icon: "🥪",
-                    bannerTitle: "Signature Sandwiches",
+                    bannerTitle: "SIGNATURE SANDWICHES",
                     bannerSub: "Grilled golden with molten cheese & farm-fresh veggies",
                     bannerImage: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
-                    layout: "dual", // HALF & FULL columns
+                    layout: "dual",
                     items: [
                         {
                             name: "Cheese Corn Sandwich",
@@ -468,7 +515,7 @@
                         },
                         {
                             name: "Veg Club Sandwich",
-                            desc: "The ultimate classic with layers of fresh & crisp veggies.",
+                            desc: "The ultimate classic with layers of fresh veggies & crisp veggies.",
                             priceHalf: 69,
                             priceFull: 109,
                             bestSeller: true,
@@ -484,7 +531,7 @@
                         },
                         {
                             name: "Veg Corn Sandwich",
-                            desc: "Classic combo of garden veggies & sweet golden corn.",
+                            desc: "Classic combo of veggies & sweet corn.",
                             priceHalf: 49,
                             priceFull: 89,
                             bestSeller: false,
@@ -502,12 +549,12 @@
                 },
                 {
                     id: "combos",
-                    tabLabel: "Combos",
+                    tabLabel: "COMBOS",
                     icon: "🍱",
-                    bannerTitle: "Junction Special Combos",
-                    bannerSub: "Curated value meal boxes • Tap any combo to view photo",
+                    bannerTitle: "JUNCTION SPECIAL COMBOS",
+                    bannerSub: "Value meal combos • Tap any combo card to view photo",
                     bannerImage: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=900&q=80",
-                    layout: "combos", // 2x2 Poster Combo Cards
+                    layout: "combos",
                     items: [
                         {
                             num: "1",
@@ -545,10 +592,10 @@
                 },
                 {
                     id: "pizza",
-                    tabLabel: "Pizza",
+                    tabLabel: "PIZZA",
                     icon: "🍕",
-                    bannerTitle: "Hand-Tossed Pizza",
-                    bannerSub: "Baked fresh with 100% real mozzarella & crisp toppings",
+                    bannerTitle: "FRESH OVEN PIZZA",
+                    bannerSub: "Baked hot with molten mozzarella & crisp farm toppings",
                     bannerImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
@@ -561,7 +608,7 @@
                         },
                         {
                             name: "Cheese Burst Corn Pizza",
-                            desc: "Cheesy, creamy & loaded with sweet corn.",
+                            desc: "Cheesy, creamy & loaded with corn.",
                             price: 99,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
@@ -575,14 +622,14 @@
                         },
                         {
                             name: "Paneer Tikka Pizza",
-                            desc: "Tandoori paneer cubes & crisp veggies.",
+                            desc: "Tandoori paneer & veggies.",
                             price: 109,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Classic Veggie Pizza",
-                            desc: "Fresh farm veggies & molten cheese.",
+                            desc: "Fresh veggies & cheese.",
                             price: 99,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80"
@@ -591,10 +638,10 @@
                 },
                 {
                     id: "burgers",
-                    tabLabel: "Burgers",
+                    tabLabel: "BURGERS",
                     icon: "🍔",
-                    bannerTitle: "Crispy Veg Burgers",
-                    bannerSub: "Golden-fried veg patties, melted cheese & signature sauces",
+                    bannerTitle: "CRISPY VEG BURGERS",
+                    bannerSub: "Toasted buns with crunchy veg patties & creamy sauces",
                     bannerImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
@@ -607,7 +654,7 @@
                         },
                         {
                             name: "Veg Burger",
-                            desc: "Crispy veg patty with fresh veggies.",
+                            desc: "Crispy veg patty with veggies.",
                             price: 39,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
@@ -616,30 +663,30 @@
                 },
                 {
                     id: "wraps",
-                    tabLabel: "Wraps",
+                    tabLabel: "WRAPS",
                     icon: "🌯",
-                    bannerTitle: "Grilled Tortilla Wraps",
-                    bannerSub: "Warm toasted wraps loaded with spiced fillings & sauces",
+                    bannerTitle: "GRILLED TORTILLA WRAPS",
+                    bannerSub: "Soft tortilla wraps packed with spiced fillings & sauces",
                     bannerImage: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
                         {
                             name: "Cheese Corn Wrap",
-                            desc: "Cheesy corn & crunchy veggies.",
+                            desc: "Cheesy corn & veggies.",
                             price: 89,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Paneer Wrap",
-                            desc: "Spiced paneer tikka with veggies.",
+                            desc: "Paneer tikka with veggies.",
                             price: 79,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Veg Wrap",
-                            desc: "Fresh veggies & signature sauces.",
+                            desc: "Fresh veggies & sauces.",
                             price: 69,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?auto=format&fit=crop&w=800&q=80"
@@ -648,23 +695,23 @@
                 },
                 {
                     id: "pasta",
-                    tabLabel: "Pasta",
+                    tabLabel: "PASTA",
                     icon: "🍝",
-                    bannerTitle: "Italian Red Sauce Pasta",
-                    bannerSub: "Penne tossed in rich, slow-simmered Italian herb tomato sauce",
+                    bannerTitle: "ITALIAN RED SAUCE PASTA",
+                    bannerSub: "Rich tangy herb tomato sauce tossed with penne pasta",
                     bannerImage: "https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
                         {
                             name: "Classic Red Sauce Pasta",
-                            desc: "Classic Italian herb red sauce.",
+                            desc: "Classic Italian red sauce.",
                             price: 69,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Cheese Loaded Red Sauce Pasta",
-                            desc: "Creamy & cheesy red sauce penne.",
+                            desc: "Creamy & cheesy red sauce.",
                             price: 69,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
@@ -673,23 +720,23 @@
                 },
                 {
                     id: "noodles",
-                    tabLabel: "Noodles",
+                    tabLabel: "NOODLES",
                     icon: "🍜",
-                    bannerTitle: "Wok-Tossed Noodles",
-                    bannerSub: "High-flame street-style Hakka & smoky chilli garlic noodles",
+                    bannerTitle: "WOK-TOSSED NOODLES",
+                    bannerSub: "High-flame street-style Hakka & fiery chilly garlic noodles",
                     bannerImage: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
                         {
                             name: "Veg Noodles",
-                            desc: "Stir-fried crisp veggies & noodles.",
+                            desc: "Stir-fried veggies & noodles.",
                             price: 79,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Chilly Garlic Noodles",
-                            desc: "Hot, smoky garlic & full of flavor.",
+                            desc: "Hot, spicy & full of flavor.",
                             price: 99,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"
@@ -698,37 +745,37 @@
                 },
                 {
                     id: "snacks",
-                    tabLabel: "Snacks",
+                    tabLabel: "SNACKS",
                     icon: "🍟",
-                    bannerTitle: "Crispy Sides & Snacks",
-                    bannerSub: "Golden fries, crunchy nuggets, veggie fingers & chilli potato",
+                    bannerTitle: "CRISPY SIDES & SNACKS",
+                    bannerSub: "Golden salted fries, crunchy nuggets & spicy chilli potato",
                     bannerImage: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
                         {
                             name: "French Fries",
-                            desc: "Crispy & golden salted fries.",
+                            desc: "Crispy & golden fries.",
                             price: 49,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Crispy Nuggets",
-                            desc: "Golden & crunchy veg nuggets.",
+                            desc: "Golden & crunchy nuggets.",
                             price: 59,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Veggie Sticks",
-                            desc: "Crispy seasoned veggie fingers.",
+                            desc: "Crispy veggie sticks.",
                             price: 69,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Chilli Potato",
-                            desc: "Spicy wok-tossed honey chilli potato.",
+                            desc: "Spicy chilli potato.",
                             price: 79,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=800&q=80"
@@ -736,45 +783,45 @@
                     ]
                 },
                 {
-                    id: "beverages",
-                    tabLabel: "Drinks",
+                    id: "drinks",
+                    tabLabel: "DRINKS",
                     icon: "🧋",
-                    bannerTitle: "Shakes & Beverages",
-                    bannerSub: "Thick creamy milkshakes, frothy cold coffee & fresh lemonade",
+                    bannerTitle: "BEVERAGES & SHAKES",
+                    bannerSub: "Chilled cold coffee, rich thick shakes & fresh lime lemonade",
                     bannerImage: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80",
                     layout: "single",
                     items: [
                         {
                             name: "Cold Coffee",
-                            desc: "Chilled, frothy & refreshing.",
+                            desc: "Chilled & refreshing.",
                             price: 49,
                             bestSeller: true,
                             image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Chocolate Shake",
-                            desc: "Rich indulgent chocolate shake.",
+                            desc: "Rich chocolate shake.",
                             price: 69,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Vanilla Shake",
-                            desc: "Classic creamy vanilla shake.",
+                            desc: "Classic vanilla shake.",
                             price: 69,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1568901839119-631418a3910d?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Strawberry Shake",
-                            desc: "Sweet berry strawberry shake.",
+                            desc: "Sweet strawberry shake.",
                             price: 59,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80"
                         },
                         {
                             name: "Lemonade",
-                            desc: "Freshly squeezed lime cooler.",
+                            desc: "Fresh lime lemonade.",
                             price: 39,
                             bestSeller: false,
                             image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
@@ -783,204 +830,197 @@
                 }
             ]
         };
-        /*__MENU_DATA_END__*/
 
-        // Keep a clean backup for reset
-        const FACTORY_BACKUP = JSON.parse(JSON.stringify(MENU_DATA));
-        let activeTabId = MENU_DATA.tabs[0].id;
-        let stealthTapCount = 0;
-        let stealthTapTimer = null;
+        // Global State
+        window.menuData = JSON.parse(JSON.stringify(DEFAULT_MENU_DATA));
+        let activeTabId = window.menuData.tabs[0].id;
+        let currentAdminCategoryIdx = 0;
+        let db = null;
+        let menuDocRef = null;
 
-        /* ============================================================================
-           🚀 INITIALIZATION & ZERO-SCROLL TAB RENDERER
-           ============================================================================ */
-        function initMenuApp() {
-            // Load locally saved staff edits if present
-            const saved = localStorage.getItem('SJ_MENU_DATA_V3');
-            if (saved) {
-                try {
-                    MENU_DATA = JSON.parse(saved);
-                } catch (e) {
-                    console.warn("Could not parse saved menu data", e);
-                }
-            }
-
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-            renderAddonsStrip();
-
-            // Check if URL has ?edit=1 or #edit for staff access
-            if (window.location.search.includes('edit=1') || window.location.hash === '#edit') {
-                openAdminModal();
-            }
+        /* =========================================================================
+           🎨 UI RENDERING FUNCTIONS (ZERO DELAY, FULL VISIBILITY)
+           ========================================================================= */
+        function renderAllUI() {
+            renderHeaderAndFooter();
+            renderCategoryGrid();
+            renderActiveCategoryCard();
+            renderAddonsBar();
         }
 
-        function renderBrandAndFooter() {
-            const info = MENU_DATA.kitchenInfo;
-            document.getElementById('brand-title-1').textContent = info.name;
-            document.getElementById('brand-title-2').textContent = info.subName;
-            document.getElementById('brand-tagline').textContent = info.tagline;
-            document.getElementById('header-hero-img').src = info.heroImage;
+        function renderHeaderAndFooter() {
+            const info = window.menuData.kitchenInfo || DEFAULT_MENU_DATA.kitchenInfo;
+            document.getElementById('brand-title-1').textContent = info.name || "SANDWICH";
+            document.getElementById('brand-title-2').textContent = info.subName || "JUNCTION";
+            document.getElementById('brand-tagline').textContent = info.tagline || "Made to Crave.";
+            if (info.heroImage) {
+                document.getElementById('header-hero-img').src = info.heroImage;
+            }
 
-            document.getElementById('footer-phone-1').textContent = info.displayPhone;
-            document.getElementById('footer-phone-2').textContent = info.displayPhone;
-            document.getElementById('footer-free-delivery').textContent = info.freeDeliveryText;
-            document.getElementById('footer-wa-link').href = `https://wa.me/${info.whatsappNumber}?text=${encodeURIComponent("Hi Sandwich Junction! I'm looking at your digital menu.")}`;
-            document.getElementById('footer-call-link').href = `tel:+${info.whatsappNumber}`;
+            document.getElementById('footer-wa-text').textContent = info.displayPhone || "86961 76974";
+            document.getElementById('footer-call-text').textContent = info.displayPhone || "86961 76974";
+            document.getElementById('footer-delivery-text').textContent = info.freeDeliveryText || "Above ₹199";
+
+            const cleanWa = (info.whatsappNumber || "918696176974").replace(/\D/g, '');
+            document.getElementById('footer-wa-btn').href = `https://wa.me/${cleanWa}?text=${encodeURIComponent("Hi Sandwich Junction! I'm checking your digital menu.")}`;
+            document.getElementById('footer-call-btn').href = `tel:+${cleanWa}`;
         }
 
-        function renderCategoryTabs() {
-            const bar = document.getElementById('category-tabs-bar');
-            bar.innerHTML = MENU_DATA.tabs.map(tab => {
+        // 3x3 Priority Category Grid without any truncation
+        function renderCategoryGrid() {
+            const grid = document.getElementById('category-grid');
+            grid.innerHTML = window.menuData.tabs.map(tab => {
                 const isActive = tab.id === activeTabId;
                 return `
                     <button
-                        onclick="switchCategoryTab('${tab.id}')"
-                        id="tab-btn-${tab.id}"
+                        type="button"
+                        onclick="switchCategory('${tab.id}')"
                         role="tab"
                         aria-selected="${isActive}"
-                        class="w-full flex items-center justify-center gap-1 py-[7px] px-1 rounded-xl transition-all select-none whitespace-nowrap ${
+                        class="w-full py-2 px-1 rounded-xl flex items-center justify-center gap-1 transition-all select-none whitespace-nowrap ${
                             isActive
-                            ? 'bg-forest text-parchment shadow-sm border border-rust ring-1 ring-rust/50'
-                            : 'bg-white/85 text-espresso hover:bg-white border border-amber-950/15'
+                                ? 'bg-forest text-white shadow-sm border border-rust ring-1 ring-rust/50'
+                                : 'bg-white text-charcoal hover:bg-stone-50 border border-amber-950/15'
                         }"
                     >
                         <span class="text-[11px] leading-none shrink-0">${tab.icon}</span>
-                        <span class="font-poster text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.03em] leading-none">${tab.tabLabel}</span>
+                        <span class="font-poster text-[12px] sm:text-[13px] font-bold uppercase tracking-wide leading-none">${tab.tabLabel}</span>
+                        ${isActive ? `<span class="w-1.5 h-1.5 rounded-full bg-rust shrink-0"></span>` : ''}
                     </button>
                 `;
             }).join('');
         }
 
-        function switchCategoryTab(tabId) {
+        window.switchCategory = function(tabId) {
             activeTabId = tabId;
-            renderCategoryTabs();
-            renderActiveCategoryStage();
+            renderCategoryGrid();
+            renderActiveCategoryCard();
+        };
+
+        function escapeQuotes(str) {
+            return String(str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
         }
 
-        function renderItemRowSingle(item) {
-            const safeName = (item.name || '').replace(/'/g, "\\'");
-            const safeDesc = (item.desc || '').replace(/'/g, "\\'");
-            const safeImg = (item.image || '').replace(/'/g, "\\'");
+        function renderSinglePriceDishRow(item) {
+            const sName = escapeQuotes(item.name);
+            const sDesc = escapeQuotes(item.desc);
+            const sImg = escapeQuotes(item.image);
             const priceLabel = `₹${item.price}`;
 
             return `
-                <div 
-                    onclick="openDishLightbox('${safeName}', '${safeDesc}', '${safeImg}', '${priceLabel}')"
-                    class="group py-2 cursor-pointer hover:bg-amber-900/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
+                <div
+                    onclick="openDishModal('${sName}', '${sDesc}', '${sImg}', '${priceLabel}')"
+                    class="py-2.5 cursor-pointer group hover:bg-amber-950/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
                 >
                     <div class="flex items-baseline justify-between gap-1.5">
                         <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 min-w-0">
-                            <span class="font-poster text-[14.5px] sm:text-[15px] font-bold uppercase text-espresso tracking-wide group-hover:text-rust transition leading-snug">
+                            <h4 class="font-poster text-[14.5px] sm:text-[15.5px] font-bold uppercase text-charcoal group-hover:text-rust transition leading-snug">
                                 ${item.name}
-                            </span>
-                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
-                            ${item.image ? `<span class="text-[10px] text-stone-400 group-hover:text-rust transition">📷</span>` : ''}
+                            </h4>
+                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">BEST SELLER</span>` : ''}
+                            <span class="text-[10px] text-stone-400 group-hover:text-rust transition">📷</span>
                         </div>
                         <div class="dotted-leader"></div>
-                        <span class="font-poster text-[15px] sm:text-[16px] font-bold text-espresso shrink-0">₹${item.price}</span>
+                        <span class="font-poster text-[15px] sm:text-[16px] font-bold text-forest shrink-0">₹${item.price}</span>
                     </div>
-                    ${item.desc ? `<p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-6">${item.desc}</p>` : ''}
+                    ${item.desc ? `<p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-4">${item.desc}</p>` : ''}
                 </div>
             `;
         }
 
-        function renderActiveCategoryStage() {
-            const stage = document.getElementById('active-category-stage');
-            const tab = MENU_DATA.tabs.find(t => t.id === activeTabId) || MENU_DATA.tabs[0];
+        function renderActiveCategoryCard() {
+            const card = document.getElementById('active-category-card');
+            const tab = window.menuData.tabs.find(t => t.id === activeTabId) || window.menuData.tabs[0];
 
-            // Retrigger subtle entrance animation
-            stage.classList.remove('tab-panel-enter');
-            void stage.offsetWidth;
-            stage.classList.add('tab-panel-enter');
+            card.classList.remove('stage-animate');
+            void card.offsetWidth;
+            card.classList.add('stage-animate');
 
-            // Top Curated Editorial Banner
+            // Category Editorial Banner
             let html = `
-                <div class="relative h-24 sm:h-28 w-full rounded-xl overflow-hidden mb-3 shadow-xs bg-stone-800 border border-amber-950/15">
-                    <img 
-                        src="${tab.bannerImage}" 
-                        alt="${tab.bannerTitle}" 
+                <div class="relative h-24 sm:h-28 w-full rounded-xl overflow-hidden mb-3 bg-stone-800 border border-amber-950/15 shadow-2xs">
+                    <img
+                        src="${tab.bannerImage}"
+                        alt="${tab.bannerTitle}"
                         class="w-full h-full object-cover"
                         onerror="this.style.display='none'"
                     >
                     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20 flex flex-col justify-end p-3">
                         <div class="flex items-center gap-1.5">
-                            <span class="text-amber-400 text-xs">❖</span>
+                            <span class="text-goldAccent text-xs">❖</span>
                             <h3 class="font-poster text-lg sm:text-xl font-bold uppercase text-white tracking-wider leading-none">
                                 ${tab.bannerTitle}
                             </h3>
-                            <span class="text-amber-400 text-xs">❖</span>
+                            <span class="text-goldAccent text-xs">❖</span>
                         </div>
                         <p class="text-[11px] text-stone-200 mt-0.5">${tab.bannerSub || ''}</p>
                     </div>
                 </div>
             `;
 
-            // LAYOUT 1: DUAL COLUMN (HALF / FULL SANDWICHES)
+            // Layout A: Dual Price Columns (Half / Full Sandwiches)
             if (tab.layout === "dual") {
                 html += `
                     <div class="flex items-center justify-end gap-3 px-1 pb-1 border-b border-amber-950/15 text-[11px] font-poster font-bold uppercase tracking-wider text-forest">
-                        <span class="w-9 text-right">Half</span>
-                        <span class="w-10 text-right">Full</span>
+                        <span class="w-10 text-right">HALF</span>
+                        <span class="w-10 text-right">FULL</span>
                     </div>
                     <div class="divide-y divide-dashed divide-amber-950/15">
-                        ${tab.items.map(item => {
-                            const safeName = (item.name || '').replace(/'/g, "\\'");
-                            const safeDesc = (item.desc || '').replace(/'/g, "\\'");
-                            const safeImg = (item.image || '').replace(/'/g, "\\'");
+                        ${(tab.items || []).map(item => {
+                            const sName = escapeQuotes(item.name);
+                            const sDesc = escapeQuotes(item.desc);
+                            const sImg = escapeQuotes(item.image);
                             const priceStr = `Half ₹${item.priceHalf} • Full ₹${item.priceFull}`;
                             return `
-                                <div 
-                                    onclick="openDishLightbox('${safeName}', '${safeDesc}', '${safeImg}', '${priceStr}')"
-                                    class="py-2 cursor-pointer group hover:bg-amber-900/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
+                                <div
+                                    onclick="openDishModal('${sName}', '${sDesc}', '${sImg}', '${priceStr}')"
+                                    class="py-2.5 cursor-pointer group hover:bg-amber-950/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
                                 >
                                     <div class="flex items-baseline justify-between gap-1">
                                         <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 min-w-0">
-                                            <h4 class="font-poster text-[14.5px] sm:text-[15px] font-bold uppercase text-espresso group-hover:text-rust transition leading-snug">
+                                            <h4 class="font-poster text-[14.5px] sm:text-[15.5px] font-bold uppercase text-charcoal group-hover:text-rust transition leading-snug">
                                                 ${item.name}
                                             </h4>
-                                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
-                                            <span class="text-[10px] text-stone-400 group-hover:text-rust">📷</span>
+                                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">BEST SELLER</span>` : ''}
+                                            <span class="text-[10px] text-stone-400 group-hover:text-rust transition">📷</span>
                                         </div>
                                         <div class="dotted-leader"></div>
-                                        <div class="flex items-center gap-3 shrink-0 font-poster text-[15px] sm:text-[16px] font-bold text-espresso">
-                                            <span class="w-9 text-right">₹${item.priceHalf}</span>
+                                        <div class="flex items-center gap-3 shrink-0 font-poster text-[15px] sm:text-[16px] font-bold text-charcoal">
+                                            <span class="w-10 text-right">₹${item.priceHalf}</span>
                                             <span class="w-10 text-right text-forest">₹${item.priceFull}</span>
                                         </div>
                                     </div>
-                                    <p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-12">${item.desc || ''}</p>
+                                    ${item.desc ? `<p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-10">${item.desc}</p>` : ''}
                                 </div>
                             `;
                         }).join('')}
                     </div>
                 `;
             }
-
-            // LAYOUT 2: 2x2 COMPACT POSTER COMBO CARDS
+            // Layout B: 2x2 Special Combos Grid
             else if (tab.layout === "combos") {
                 html += `
                     <div class="grid grid-cols-2 gap-2.5">
-                        ${tab.items.map(item => {
-                            const safeName = (item.name || '').replace(/'/g, "\\'");
-                            const safeDesc = (item.desc || '').replace(/'/g, "\\'");
-                            const safeImg = (item.image || '').replace(/'/g, "\\'");
-                            const bullets = (item.desc || '').split('•').map(s => s.trim()).filter(Boolean);
-
+                        ${(tab.items || []).map((item, idx) => {
+                            const sName = escapeQuotes(item.name);
+                            const sDesc = escapeQuotes(item.desc);
+                            const sImg = escapeQuotes(item.image);
+                            const bullets = String(item.desc || '').split('•').map(s => s.trim()).filter(Boolean);
                             return `
-                                <div 
-                                    onclick="openDishLightbox('${safeName}', '${safeDesc}', '${safeImg}', 'Combo ₹${item.price}')"
-                                    class="cursor-pointer group bg-[#F5EBDC] hover:bg-[#EFE2CE] border border-amber-950/20 rounded-xl p-2.5 flex flex-col justify-between transition shadow-2xs relative overflow-hidden"
+                                <div
+                                    onclick="openDishModal('${sName}', '${sDesc}', '${sImg}', 'Combo ₹${item.price}')"
+                                    class="cursor-pointer group bg-[#F6EFE2] hover:bg-[#EFE4D0] border border-amber-950/20 rounded-xl p-2.5 flex flex-col justify-between transition shadow-2xs"
                                 >
                                     <div>
-                                        <div class="flex items-start justify-between gap-1 pb-1.5 border-b border-amber-950/15">
-                                            <div class="flex items-start gap-1.5 min-w-0">
-                                                <span class="w-5 h-5 rounded bg-forest text-white font-poster text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
-                                                    ${item.num || '★'}
-                                                </span>
-                                                <h4 class="font-poster text-[13.5px] font-bold uppercase text-espresso group-hover:text-rust transition leading-tight">
+                                        <div class="flex items-start gap-1.5 pb-1.5 border-b border-amber-950/15">
+                                            <span class="w-5 h-5 rounded bg-forest text-white font-poster text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                                                ${item.num || (idx + 1)}
+                                            </span>
+                                            <div class="min-w-0">
+                                                <h4 class="font-poster text-[13.5px] font-bold uppercase text-charcoal group-hover:text-rust transition leading-tight">
                                                     ${item.name}
                                                 </h4>
+                                                ${item.bestSeller ? `<span class="inline-block mt-0.5 bg-rust text-white font-poster text-[8px] font-bold px-1.5 py-0.2 rounded uppercase">BEST SELLER</span>` : ''}
                                             </div>
                                         </div>
                                         <ul class="mt-2 space-y-1 text-[11px] font-medium text-stone-700">
@@ -992,9 +1032,8 @@
                                             `).join('')}
                                         </ul>
                                     </div>
-
                                     <div class="mt-2.5 pt-1.5 border-t border-dashed border-amber-950/15 flex items-center justify-between">
-                                        <span class="text-[10px] font-semibold text-stone-500 group-hover:text-espresso">📷 Tap Photo</span>
+                                        <span class="text-[10px] font-semibold text-stone-500 group-hover:text-charcoal">📷 Photo</span>
                                         <span class="bg-rust text-white font-poster font-bold text-sm px-2 py-0.5 rounded shadow-2xs">
                                             ₹${item.price}
                                         </span>
@@ -1005,377 +1044,407 @@
                     </div>
                 `;
             }
-
-            // LAYOUT 3: SPLIT SUB-SECTIONS (BURGERS & WRAPS / PASTA & NOODLES / SNACKS & DRINKS)
-            else if (tab.layout === "split") {
-                html += `
-                    <div class="space-y-3">
-                        ${(tab.sections || []).map(sec => `
-                            <div>
-                                <div class="flex items-center gap-1.5 border-b border-amber-950/15 pb-1 mb-1">
-                                    <span class="text-rust text-xs">❧</span>
-                                    <h4 class="font-poster text-sm font-bold uppercase tracking-wider text-forest">${sec.heading}</h4>
-                                </div>
-                                <div class="divide-y divide-dashed divide-amber-950/10">
-                                    ${sec.items.map(item => renderItemRowSingle(item)).join('')}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            }
-
-            // LAYOUT 4: SINGLE COLUMN RESTAURANT SHEET (PIZZA)
+            // Layout C: Standard Single-Price Dish List
             else {
                 html += `
                     <div class="divide-y divide-dashed divide-amber-950/15">
-                        ${tab.items.map(item => renderItemRowSingle(item)).join('')}
+                        ${(tab.items || []).map(item => renderSinglePriceDishRow(item)).join('')}
                     </div>
                 `;
             }
 
-            stage.innerHTML = html;
+            card.innerHTML = html;
         }
 
-        function renderAddonsStrip() {
-            const container = document.getElementById('addons-strip-items');
-            container.innerHTML = (MENU_DATA.addons || []).map(ad => `
-                <span class="inline-flex items-center gap-1.5 bg-white/85 px-2.5 py-1 rounded-md border border-amber-950/15 whitespace-nowrap">
-                    <span class="font-poster uppercase tracking-wide text-espresso text-[11.5px]">${ad.name}</span>
-                    <span class="font-poster text-rust text-[12px]">₹${ad.price}</span>
+        function renderAddonsBar() {
+            const bar = document.getElementById('addons-bar');
+            bar.innerHTML = (window.menuData.addons || []).map(addon => `
+                <span class="inline-flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-lg border border-amber-950/15 whitespace-nowrap">
+                    <span class="font-poster text-[11.5px] font-bold uppercase text-charcoal">${addon.name}</span>
+                    <span class="font-poster text-[12px] font-bold text-rust">₹${addon.price}</span>
                 </span>
             `).join('');
         }
 
-        /* ============================================================================
-           📸 DISH PHOTO LIGHTBOX (ON-DEMAND REALISTIC FOOD PREVIEW)
-           ============================================================================ */
-        function openDishLightbox(title, desc, imageUrl, priceText) {
-            if (!imageUrl) return;
+        /* =========================================================================
+           📸 DISH LIGHTBOX FUNCTIONS
+           ========================================================================= */
+        window.openDishModal = function(title, desc, imgUrl, priceText) {
             document.getElementById('lightbox-title').textContent = title;
-            document.getElementById('lightbox-desc').textContent = desc;
-            document.getElementById('lightbox-img').src = imageUrl;
-            document.getElementById('lightbox-price-pill').textContent = priceText;
+            document.getElementById('lightbox-desc').textContent = desc || '';
+            document.getElementById('lightbox-img').src = imgUrl || 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80';
+            document.getElementById('lightbox-price').textContent = priceText || '';
 
             const modal = document.getElementById('dish-lightbox');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-        }
+        };
 
-        function closeDishLightbox() {
+        window.closeDishModal = function() {
             const modal = document.getElementById('dish-lightbox');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-        }
+        };
 
-        /* ============================================================================
-           🔐 STEALTH ADMIN MODE (5 TAPS ON "PURE VEG" OR ?edit=1)
-           ============================================================================ */
-        function handleStealthTap() {
-            stealthTapCount++;
-            if (stealthTapTimer) clearTimeout(stealthTapTimer);
-            stealthTapTimer = setTimeout(() => {
-                stealthTapCount = 0;
-            }, 1800);
+        /* =========================================================================
+           🔐 SECRET URL CHECK (`?key=sandwich2026`) & CLOUD EDITOR LOGIC
+           ========================================================================= */
+        function checkSecretAdminAccess() {
+            const isAuthorized =
+                window.location.search.includes("key=sandwich2026") ||
+                window.location.hash.includes("sandwich2026");
 
-            if (stealthTapCount >= 5) {
-                stealthTapCount = 0;
-                openAdminModal();
+            const adminBar = document.getElementById('staff-admin-bar');
+            if (isAuthorized) {
+                adminBar.classList.remove('hidden');
+                adminBar.classList.add('flex');
+            } else {
+                adminBar.classList.add('hidden');
+                adminBar.classList.remove('flex');
             }
         }
 
-        function openAdminModal() {
-            const info = MENU_DATA.kitchenInfo;
-            document.getElementById('adm-display-phone').value = info.displayPhone || '';
-            document.getElementById('adm-wa-phone').value = info.whatsappNumber || '';
-            document.getElementById('adm-free-del').value = info.freeDeliveryText || '';
-            document.getElementById('adm-hero-img').value = info.heroImage || '';
+        window.openCloudEditorModal = function() {
+            const info = window.menuData.kitchenInfo || {};
+            document.getElementById('adm-phone-display').value = info.displayPhone || '';
+            document.getElementById('adm-phone-wa').value = info.whatsappNumber || '';
+            document.getElementById('adm-free-delivery').value = info.freeDeliveryText || '';
+            document.getElementById('adm-hero-url').value = info.heroImage || '';
 
-            const select = document.getElementById('adm-category-select');
-            select.innerHTML = MENU_DATA.tabs.map((t, i) => `
-                <option value="${i}">${t.icon} ${t.tabLabel} (${t.bannerTitle})</option>
+            renderAdminAddons();
+
+            const select = document.getElementById('adm-cat-select');
+            select.innerHTML = window.menuData.tabs.map((t, idx) => `
+                <option value="${idx}">${t.icon} ${t.tabLabel} (${t.items.length} dishes)</option>
             `).join('');
 
-            renderAdminCategoryEditor(0);
+            const activeIdx = Math.max(0, window.menuData.tabs.findIndex(t => t.id === activeTabId));
+            select.value = String(activeIdx);
+            renderAdminCategoryItems(activeIdx);
 
-            const modal = document.getElementById('stealth-admin-modal');
+            const modal = document.getElementById('cloud-editor-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-        }
+        };
 
-        function closeAdminModal() {
-            const modal = document.getElementById('stealth-admin-modal');
+        window.closeCloudEditorModal = function() {
+            const modal = document.getElementById('cloud-editor-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-        }
+        };
 
-        function updateGlobalField(key, value) {
-            MENU_DATA.kitchenInfo[key] = value;
-        }
+        window.renderAdminAddons = function() {
+            const list = document.getElementById('adm-addons-list');
+            list.innerHTML = (window.menuData.addons || []).map((ad, idx) => `
+                <div class="flex items-center gap-2">
+                    <input
+                        type="text"
+                        value="${escapeQuotes(ad.name)}"
+                        oninput="menuData.addons[${idx}].name = this.value"
+                        class="flex-1 bg-white border border-stone-300 rounded-lg px-2 py-1 font-bold text-xs"
+                        placeholder="Add-on Name"
+                    >
+                    <div class="flex items-center gap-1">
+                        <span class="text-stone-500 font-bold">₹</span>
+                        <input
+                            type="number"
+                            value="${ad.price ?? 0}"
+                            oninput="menuData.addons[${idx}].price = Number(this.value)"
+                            class="w-16 bg-white border border-stone-300 rounded-lg px-2 py-1 font-bold text-xs"
+                        >
+                    </div>
+                    <button
+                        type="button"
+                        onclick="removeAddonItem(${idx})"
+                        class="text-red-600 hover:bg-red-50 px-2 py-1 rounded border border-red-200 font-bold text-[10px]"
+                    >
+                        🗑️
+                    </button>
+                </div>
+            `).join('');
+        };
 
-        function renderAdminCategoryEditor(tabIndex) {
-            const idx = Number(tabIndex);
-            const tab = MENU_DATA.tabs[idx];
-            const container = document.getElementById('adm-items-container');
+        window.addAddonItem = function() {
+            window.menuData.addons.push({ name: "EXTRA DIP", price: 15 });
+            renderAdminAddons();
+        };
+
+        window.removeAddonItem = function(idx) {
+            window.menuData.addons.splice(idx, 1);
+            renderAdminAddons();
+        };
+
+        window.renderAdminCategoryItems = function(tabIndex) {
+            currentAdminCategoryIdx = Number(tabIndex);
+            const tab = window.menuData.tabs[currentAdminCategoryIdx];
+            const container = document.getElementById('adm-cat-items');
+            const isDual = tab.layout === "dual";
+            const isCombo = tab.layout === "combos";
 
             let html = `
-                <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                    <label class="block text-[10px] font-bold uppercase text-stone-500">Category Banner Photo URL (Unsplash / Imgur / Postimages)</label>
-                    <input 
-                        type="text" 
-                        value="${tab.bannerImage || ''}" 
-                        onchange="MENU_DATA.tabs[${idx}].bannerImage = this.value"
-                        class="w-full bg-white border border-stone-300 rounded-lg px-2.5 py-1.5 font-mono text-[10px]"
+                <div class="bg-white p-2.5 rounded-xl border border-stone-200 space-y-1.5">
+                    <label class="block text-[10px] font-bold uppercase text-stone-500">Category Banner Photo URL</label>
+                    <input
+                        type="text"
+                        value="${escapeQuotes(tab.bannerImage)}"
+                        oninput="menuData.tabs[${currentAdminCategoryIdx}].bannerImage = this.value"
+                        class="w-full border border-stone-300 rounded-lg px-2 py-1 font-mono text-[10px]"
                     >
                 </div>
+                <div class="space-y-2.5">
             `;
 
-            if (tab.layout === "split") {
-                tab.sections.forEach((sec, sIdx) => {
-                    html += `
-                        <div class="pt-2">
-                            <div class="font-poster font-bold text-sm uppercase text-forest mb-2 flex items-center justify-between border-b border-stone-200 pb-1">
-                                <span>❧ ${sec.heading}</span>
-                                <span class="text-[10px] font-sans font-semibold text-stone-400">${sec.items.length} items</span>
-                            </div>
-                            <div class="space-y-2.5">
-                                ${sec.items.map((item, iIdx) => buildAdminItemCard(item, idx, sIdx, iIdx, tab.layout)).join('')}
-                            </div>
-                            <button 
-                                type="button"
-                                onclick="addAdminMenuItem(${idx}, ${sIdx})"
-                                class="mt-2 w-full py-2 rounded-xl border-2 border-dashed border-forest/35 hover:border-forest bg-emerald-950/5 hover:bg-emerald-950/10 text-forest font-bold text-xs transition flex items-center justify-center gap-1.5"
-                            >
-                                <span>+ Add New Item to ${sec.heading}</span>
-                            </button>
-                        </div>
-                    `;
-                });
-            } else {
-                html += `
-                    <div class="space-y-2.5">
-                        ${tab.items.map((item, iIdx) => buildAdminItemCard(item, idx, null, iIdx, tab.layout)).join('')}
-                    </div>
-                    <button 
-                        type="button"
-                        onclick="addAdminMenuItem(${idx}, null)"
-                        class="mt-3 w-full py-2.5 rounded-xl border-2 border-dashed border-forest/40 hover:border-forest bg-emerald-950/5 hover:bg-emerald-950/10 text-forest font-bold text-xs transition flex items-center justify-center gap-1.5"
-                    >
-                        <span>${tab.layout === 'combos' ? '+ Add New Combo' : `+ Add New Item to ${tab.tabLabel}`}</span>
-                    </button>
-                `;
-            }
-
-            container.innerHTML = html;
-        }
-
-        function buildAdminItemCard(item, tabIdx, secIdx, itemIdx, layout) {
-            const pathExpr = secIdx !== null && secIdx !== undefined
-                ? `MENU_DATA.tabs[${tabIdx}].sections[${secIdx}].items[${itemIdx}]`
-                : `MENU_DATA.tabs[${tabIdx}].items[${itemIdx}]`;
-            const isDual = layout === "dual";
-            const isCombo = layout === "combos";
-            const safeNameAttr = (item.name || '').replace(/"/g, '&quot;');
-            const safeDescAttr = (item.desc || '').replace(/"/g, '&quot;');
-            const safeImgAttr = (item.image || '').replace(/"/g, '&quot;');
-            const safeNumAttr = (item.num || '').replace(/"/g, '&quot;');
-
-            return `
+            html += (tab.items || []).map((item, itemIdx) => `
                 <div class="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs space-y-2">
                     <div class="flex items-center justify-between gap-2">
                         ${isCombo ? `
-                            <input 
-                                type="text" 
-                                value="${safeNumAttr}" 
-                                oninput="${pathExpr}.num = this.value"
-                                class="w-8 text-center font-poster font-bold text-xs bg-forest text-white rounded py-1 shrink-0"
-                                title="Combo Badge Number"
-                                placeholder="#"
+                            <input
+                                type="text"
+                                value="${escapeQuotes(item.num || String(itemIdx + 1))}"
+                                oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].num = this.value"
+                                class="w-7 text-center font-poster font-bold text-xs bg-forest text-white rounded py-1 shrink-0"
+                                title="Combo Number"
                             >
                         ` : ''}
-                        <input 
-                            type="text" 
-                            value="${safeNameAttr}" 
-                            oninput="${pathExpr}.name = this.value"
-                            class="font-bold text-espresso border-b border-stone-300 focus:border-forest focus:outline-none flex-1 py-0.5 min-w-0"
-                            placeholder="${isCombo ? 'Combo Name (e.g. Feast For One)' : 'Dish Name'}"
+                        <input
+                            type="text"
+                            value="${escapeQuotes(item.name)}"
+                            oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].name = this.value"
+                            class="font-bold text-charcoal border-b border-stone-300 focus:border-forest focus:outline-none flex-1 py-0.5 min-w-0"
+                            placeholder="Dish Name"
                         >
                         <label class="inline-flex items-center gap-1 text-[10px] font-bold text-rust cursor-pointer shrink-0">
-                            <input type="checkbox" ${item.bestSeller ? 'checked' : ''} onchange="${pathExpr}.bestSeller = this.checked">
-                            <span>Best Seller</span>
+                            <input
+                                type="checkbox"
+                                ${item.bestSeller ? 'checked' : ''}
+                                onchange="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].bestSeller = this.checked"
+                            >
+                            <span>BEST SELLER</span>
                         </label>
-                        <button 
+                        <button
                             type="button"
-                            onclick="deleteAdminMenuItem(${tabIdx}, ${secIdx === null ? 'null' : secIdx}, ${itemIdx})"
+                            onclick="deleteAdminDish(${currentAdminCategoryIdx}, ${itemIdx})"
                             class="text-[10px] font-bold text-red-600 hover:bg-red-50 border border-red-200 rounded-md px-2 py-1 shrink-0 transition"
-                            title="Remove this item"
                         >
-                            🗑️ Remove
+                            🗑️ Delete
                         </button>
                     </div>
 
-                    <input 
-                        type="text" 
-                        value="${safeDescAttr}" 
-                        oninput="${pathExpr}.desc = this.value"
+                    <input
+                        type="text"
+                        value="${escapeQuotes(item.desc)}"
+                        oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].desc = this.value"
                         class="w-full text-[11px] text-stone-600 border border-stone-200 rounded-lg px-2 py-1"
-                        placeholder="${isCombo ? 'Combo items separated by • (e.g. Veg Burger • Fries • Cold Coffee)' : 'Short description'}"
+                        placeholder="${isCombo ? 'Items separated by • (e.g. Veg Burger • Fries • Cold Coffee)' : 'Dish description'}"
                     >
 
                     <div class="grid ${isDual ? 'grid-cols-3' : 'grid-cols-2'} gap-2 items-center">
                         ${isDual ? `
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Half Price (₹)</label>
-                                <input type="number" value="${item.priceHalf ?? 0}" oninput="${pathExpr}.priceHalf = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input
+                                    type="number"
+                                    value="${item.priceHalf ?? 0}"
+                                    oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].priceHalf = Number(this.value)"
+                                    class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold"
+                                >
                             </div>
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Full Price (₹)</label>
-                                <input type="number" value="${item.priceFull ?? 0}" oninput="${pathExpr}.priceFull = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input
+                                    type="number"
+                                    value="${item.priceFull ?? 0}"
+                                    oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].priceFull = Number(this.value)"
+                                    class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold"
+                                >
                             </div>
                         ` : `
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Price (₹)</label>
-                                <input type="number" value="${item.price ?? 0}" oninput="${pathExpr}.price = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input
+                                    type="number"
+                                    value="${item.price ?? 0}"
+                                    oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].price = Number(this.value)"
+                                    class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold"
+                                >
                             </div>
                         `}
                         <div>
-                            <label class="block text-[9px] font-bold uppercase text-stone-400">Realistic Dish Photo URL</label>
-                            <input type="text" value="${safeImgAttr}" oninput="${pathExpr}.image = this.value" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-mono text-[10px]" placeholder="https://...">
+                            <label class="block text-[9px] font-bold uppercase text-stone-400">Unsplash / Photo URL</label>
+                            <input
+                                type="text"
+                                value="${escapeQuotes(item.image)}"
+                                oninput="menuData.tabs[${currentAdminCategoryIdx}].items[${itemIdx}].image = this.value"
+                                class="w-full border border-stone-300 rounded-lg px-2 py-1 font-mono text-[10px]"
+                                placeholder="https://..."
+                            >
                         </div>
                     </div>
                 </div>
+            `).join('');
+
+            html += `
+                </div>
+                <button
+                    type="button"
+                    onclick="addAdminDish(${currentAdminCategoryIdx})"
+                    class="mt-2.5 w-full py-2.5 rounded-xl border-2 border-dashed border-forest/40 hover:border-forest bg-emerald-950/5 hover:bg-emerald-950/10 text-forest font-bold text-xs transition flex items-center justify-center gap-1.5"
+                >
+                    <span>+ Add New Dish to ${tab.tabLabel}</span>
+                </button>
             `;
-        }
 
-        function addAdminMenuItem(tabIdx, secIdx) {
-            const tab = MENU_DATA.tabs[tabIdx];
-            let newItem;
+            container.innerHTML = html;
+        };
 
+        window.addAdminDish = function(tabIdx) {
+            const tab = window.menuData.tabs[tabIdx];
             if (tab.layout === "dual") {
-                newItem = {
-                    name: "New Sandwich",
-                    desc: "Freshly grilled with signature spices & veggies.",
+                tab.items.push({
+                    name: "New Special Sandwich",
+                    desc: "Freshly grilled with signature herbs & veggies.",
                     priceHalf: 59,
                     priceFull: 99,
                     bestSeller: false,
-                    image: tab.bannerImage || "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
-                };
-                tab.items.push(newItem);
+                    image: tab.bannerImage
+                });
             } else if (tab.layout === "combos") {
-                const nextNum = String((tab.items?.length || 0) + 1);
-                newItem = {
+                const nextNum = String((tab.items.length || 0) + 1);
+                tab.items.push({
                     num: nextNum,
-                    name: "New Special Combo",
-                    desc: "Main Dish • French Fries • Cold Coffee",
+                    name: "New Value Combo",
+                    desc: "Veg Sandwich • French Fries • Cold Coffee",
                     price: 199,
                     bestSeller: false,
-                    image: tab.bannerImage || "https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=800&q=80"
-                };
-                tab.items.push(newItem);
-            } else if (tab.layout === "split" && secIdx !== null && secIdx !== undefined) {
-                const targetSec = tab.sections[secIdx];
-                newItem = {
-                    name: `New ${targetSec.heading} Item`,
+                    image: tab.bannerImage
+                });
+            } else {
+                tab.items.push({
+                    name: `New ${tab.tabLabel} Item`,
                     desc: "Freshly prepared to order.",
-                    price: 69,
+                    price: 79,
                     bestSeller: false,
-                    image: tab.bannerImage || "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
-                };
-                targetSec.items.push(newItem);
-            } else {
-                newItem = {
-                    name: `New ${tab.tabLabel} Dish`,
-                    desc: "Freshly prepared with premium ingredients.",
-                    price: 99,
-                    bestSeller: false,
-                    image: tab.bannerImage || "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
-                };
-                tab.items.push(newItem);
+                    image: tab.bannerImage
+                });
             }
+            renderAdminCategoryItems(tabIdx);
+            renderAllUI();
+        };
 
-            renderAdminCategoryEditor(tabIdx);
+        window.deleteAdminDish = function(tabIdx, itemIdx) {
+            window.menuData.tabs[tabIdx].items.splice(itemIdx, 1);
+            renderAdminCategoryItems(tabIdx);
+            renderAllUI();
+        };
+
+        /* =========================================================================
+           ☁️ FIREBASE CLOUD FIRESTORE REAL-TIME SYNC & SAVE
+           ========================================================================= */
+        function showToast(msg) {
+            const toast = document.getElementById('live-toast');
+            document.getElementById('live-toast-text').textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
         }
 
-        function deleteAdminMenuItem(tabIdx, secIdx, itemIdx) {
-            const tab = MENU_DATA.tabs[tabIdx];
-            if (tab.layout === "split" && secIdx !== null && secIdx !== undefined) {
-                tab.sections[secIdx].items.splice(itemIdx, 1);
-            } else {
-                tab.items.splice(itemIdx, 1);
+        function setEditorStatusBanner(msg, isError = false) {
+            const banner = document.getElementById('cloud-save-status');
+            banner.textContent = msg;
+            banner.className = `rounded-xl px-3 py-2 font-bold text-xs flex items-center justify-between ${
+                isError ? 'bg-red-100 text-red-700 border border-red-300' : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+            }`;
+        }
+
+        window.saveMenuToFirebaseCloud = async function() {
+            const saveBtn = document.getElementById('btn-cloud-save');
+            const origText = saveBtn.innerHTML;
+            saveBtn.innerHTML = `<span>⏳ Publishing to Cloud...</span>`;
+            saveBtn.disabled = true;
+
+            renderAllUI();
+
+            try {
+                if (!menuDocRef) throw new Error("Firebase Cloud not initialized");
+                const cleanPayload = JSON.parse(JSON.stringify(window.menuData));
+                await setDoc(menuDocRef, cleanPayload);
+                setEditorStatusBanner("✅ Published Live! Every QR scan now shows your updated menu.");
+                showToast("☁️ Live Menu Updated in Cloud!");
+            } catch (err) {
+                console.error("Cloud save error:", err);
+                setEditorStatusBanner("⚠️ Cloud Save Failed: Check Firestore Security Rules.", true);
+            } finally {
+                saveBtn.innerHTML = origText;
+                saveBtn.disabled = false;
             }
-            renderAdminCategoryEditor(tabIdx);
-        }
+        };
 
-        function saveAdminPreview() {
-            localStorage.setItem('SJ_MENU_DATA_V3', JSON.stringify(MENU_DATA));
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-            renderAddonsStrip();
-            closeAdminModal();
-        }
+        window.promptResetToDefaults = function() {
+            const m = document.getElementById('reset-confirm-modal');
+            m.classList.remove('hidden');
+            m.classList.add('flex');
+        };
 
-        function resetMenuToFactory() {
-            localStorage.removeItem('SJ_MENU_DATA_V3');
-            MENU_DATA = JSON.parse(JSON.stringify(FACTORY_BACKUP));
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-            renderAddonsStrip();
-            closeAdminModal();
-        }
+        window.closeResetPrompt = function() {
+            const m = document.getElementById('reset-confirm-modal');
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+        };
 
-        function downloadUpdatedHtmlFile() {
-            // Save to local preview first
-            localStorage.setItem('SJ_MENU_DATA_V3', JSON.stringify(MENU_DATA));
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-            renderAddonsStrip();
-            closeAdminModal();
-        }
+        window.confirmResetToDefaults = async function() {
+            closeResetPrompt();
+            window.menuData = JSON.parse(JSON.stringify(DEFAULT_MENU_DATA));
+            renderAllUI();
+            try {
+                if (menuDocRef) {
+                    await setDoc(menuDocRef, JSON.parse(JSON.stringify(DEFAULT_MENU_DATA)));
+                    showToast("♻️ Factory Menu Restored to Cloud!");
+                }
+            } catch (e) {
+                console.error("Reset error:", e);
+            }
+            if (!document.getElementById('cloud-editor-modal').classList.contains('hidden')) {
+                openCloudEditorModal();
+            }
+        };
 
-        function resetMenuToFactory() {
-            localStorage.removeItem('SJ_MENU_DATA_V2');
-            MENU_DATA = JSON.parse(JSON.stringify(FACTORY_BACKUP));
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-            renderAddonsStrip();
-            closeAdminModal();
-        }
+        function initFirebaseLiveSync() {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                menuDocRef = doc(db, "menu", "live_data");
 
-        function downloadUpdatedHtmlFile() {
-            // Save to local preview first
-            localStorage.setItem('SJ_MENU_DATA_V2', JSON.stringify(MENU_DATA));
-            renderBrandAndFooter();
-            renderCategoryTabs();
-            renderActiveCategoryStage();
-
-            // Replace the MENU_DATA block inside the complete HTML document source
-            const fullHtml = document.documentElement.outerHTML;
-            const startMarker = '/*__MENU_DATA_START__*/';
-            const endMarker = '/*__MENU_DATA_END__*/';
-            const startIdx = fullHtml.indexOf(startMarker);
-            const endIdx = fullHtml.indexOf(endMarker);
-
-            if (startIdx !== -1 && endIdx !== -1) {
-                const newBlock = `${startMarker}\n        let MENU_DATA = ${JSON.stringify(MENU_DATA, null, 4)};\n        ${endMarker}`;
-                const updatedFileContent = '<!DOCTYPE html>\n' + fullHtml.substring(0, startIdx) + newBlock + fullHtml.substring(endIdx + endMarker.length);
-
-                const blob = new Blob([updatedFileContent], { type: 'text/html;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'index.html';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                onSnapshot(menuDocRef, async (snapshot) => {
+                    if (snapshot.exists()) {
+                        const cloudData = snapshot.data();
+                        if (cloudData && Array.isArray(cloudData.tabs)) {
+                            window.menuData = cloudData;
+                            renderAllUI();
+                        }
+                    } else {
+                        // Automatically seed Firestore with DEFAULT_MENU_DATA on first load
+                        try {
+                            await setDoc(menuDocRef, JSON.parse(JSON.stringify(DEFAULT_MENU_DATA)));
+                        } catch (seedErr) {
+                            console.warn("Initial cloud seed skipped:", seedErr);
+                        }
+                    }
+                }, (error) => {
+                    console.warn("Firestore live listener using offline fallback:", error);
+                });
+            } catch (err) {
+                console.warn("Firebase initialization fallback:", err);
             }
         }
 
-        window.onload = initMenuApp;
+        // Instant boot on page load (zero delay)
+        renderAllUI();
+        checkSecretAdminAccess();
+        initFirebaseLiveSync();
+        window.addEventListener('hashchange', checkSecretAdminAccess);
     </script>
 </body>
 </html>
