@@ -86,10 +86,10 @@
         .dotted-leader {
             flex-grow: 1;
             border-bottom: 1.5px dotted #C6B69C;
-            margin: 0 8px;
+            margin: 0 6px;
             position: relative;
             top: -4px;
-            min-width: 16px;
+            min-width: 8px;
         }
         /* Hide Scrollbars on Category Pill Bar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -166,13 +166,13 @@
             </div>
 
             <!-- Main OG Brand Lockup + Hero Collage -->
-            <div class="mt-2 flex items-center justify-between gap-2">
+            <div class="mt-2.5 flex items-center justify-between gap-2">
                 
                 <!-- Left: Replicated OG Poster Logo -->
-                <div class="flex flex-col items-center sm:items-start pl-1">
+                <div class="flex flex-col items-start pl-0.5 min-w-0">
                     <!-- Hand-Drawn Ink Double-Decker Sandwich Icon (Exact Poster Style) -->
-                    <div class="mb-0.5 text-espresso">
-                        <svg class="w-11 h-9" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="mb-0.5 text-espresso self-center sm:self-start">
+                        <svg class="w-10 h-8 sm:w-11 sm:h-9" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- Top Bread Slice -->
                             <path d="M8 16L32 5L56 16L32 26L8 16Z" fill="#F5DEC0" stroke="#1E1815" stroke-width="2.4" stroke-linejoin="round"/>
                             <path d="M16 15L32 8.5L48 15" stroke="#C44527" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
@@ -192,18 +192,18 @@
                     </div>
 
                     <!-- "SANDWICH" in Distressed Forest Green Brush -->
-                    <h1 id="brand-title-1" class="og-logo-green text-[42px] sm:text-[46px] uppercase select-none">
+                    <h1 id="brand-title-1" class="og-logo-green text-[38px] sm:text-[46px] uppercase select-none">
                         SANDWICH
                     </h1>
 
                     <!-- "JUNCTION" in Distressed Burnt Rust Brush -->
-                    <h2 id="brand-title-2" class="og-logo-rust text-[33px] sm:text-[36px] uppercase -mt-1 select-none">
+                    <h2 id="brand-title-2" class="og-logo-rust text-[30px] sm:text-[36px] uppercase -mt-1 select-none">
                         JUNCTION
                     </h2>
 
                     <!-- "Made to Crave." in Script + Tapered Rust Underline -->
-                    <div class="relative mt-0.5 flex flex-col items-center">
-                        <p id="brand-tagline" class="font-script text-[21px] font-bold text-espresso leading-none">
+                    <div class="relative mt-1 flex flex-col items-center self-center sm:self-start">
+                        <p id="brand-tagline" class="font-script text-[20px] font-bold text-espresso leading-none whitespace-nowrap">
                             Made to Crave.
                         </p>
                         <svg class="w-28 h-2.5 -mt-0.5 text-rust" viewBox="0 0 120 10" fill="none">
@@ -213,7 +213,7 @@
                 </div>
 
                 <!-- Right: Realistic Food Trio Showcase (Click to enlarge) -->
-                <div class="relative w-[142px] h-[118px] sm:w-[155px] sm:h-[126px] shrink-0">
+                <div class="relative w-[130px] h-[112px] sm:w-[155px] sm:h-[126px] shrink-0">
                     <!-- Main Panini Club Photo -->
                     <div 
                         onclick="openDishLightbox('Signature Grilled Club', 'Triple-layered toasted sourdough packed with spiced corn, paneer & herbs.', 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85', '₹69 / ₹109')"
@@ -225,19 +225,19 @@
                             alt="Sandwich Junction Signature" 
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                         >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent flex items-end justify-between p-2">
-                            <span class="text-[10px] font-bold text-amber-200 tracking-wide uppercase">★ House Special</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent flex items-end justify-center p-1.5">
+                            <span class="text-[9.5px] font-bold text-amber-200 tracking-wide uppercase whitespace-nowrap">★ House Special</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- =================================================================
-                 2. ZERO-SCROLL HORIZONTAL CATEGORY DECK SWITCHER
+                 2. ZERO-SCROLL 3x2 CATEGORY GRID SWITCHER (ALL VISIBLE AT ONCE)
                  ================================================================= -->
-            <div class="mt-3.5 -mx-4 px-4 pt-2 border-t border-amber-950/10">
-                <div id="category-tabs-bar" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1" role="tablist">
-                    <!-- Dynamically populated tactile tabs -->
+            <div class="mt-3.5 pt-2.5 border-t border-amber-950/10">
+                <div id="category-tabs-bar" class="grid grid-cols-3 gap-1.5" role="tablist">
+                    <!-- Dynamically populated 3x2 tactile category buttons -->
                 </div>
             </div>
         </header>
@@ -251,13 +251,13 @@
             </div>
 
             <!-- Always-Visible Compact Add-Ons Strip (Directly from Poster Bottom) -->
-            <div class="mt-2.5 bg-[#EFE5D4] border border-amber-950/20 rounded-xl px-3 py-2 flex items-center justify-between gap-2 shadow-2xs">
-                <div class="flex items-center gap-1.5">
-                    <span class="text-rust font-bold text-xs">✦</span>
-                    <span class="font-poster text-xs font-bold tracking-wider uppercase text-espresso">Add-Ons</span>
-                    <span class="text-rust font-bold text-xs">✦</span>
+            <div class="mt-2.5 bg-[#EFE5D4] border border-amber-950/20 rounded-xl px-2.5 py-2 flex items-center justify-between gap-2 shadow-2xs">
+                <div class="flex items-center gap-1 shrink-0">
+                    <span class="text-rust font-bold text-[11px]">✦</span>
+                    <span class="font-poster text-[11px] font-bold tracking-wider uppercase text-espresso whitespace-nowrap">Add-Ons</span>
+                    <span class="text-rust font-bold text-[11px]">✦</span>
                 </div>
-                <div id="addons-strip-items" class="flex items-center gap-3 text-xs font-bold text-espresso">
+                <div id="addons-strip-items" class="flex items-center justify-end gap-1.5 flex-wrap text-xs font-bold text-espresso">
                     <!-- Populated from MENU_DATA.addons -->
                 </div>
             </div>
@@ -267,47 +267,47 @@
              4. POSTER-MATCHED STICKY FOOTER BAR (READ-ONLY INFO + CALL/WHATSAPP)
              ===================================================================== -->
         <footer class="fixed bottom-0 left-0 right-0 z-30 flex justify-center pointer-events-none">
-            <div class="w-full max-w-[480px] bg-charcoalBar text-parchment px-3.5 py-2.5 border-t-2 border-rust/80 shadow-2xl pointer-events-auto flex items-center justify-between gap-2">
+            <div class="w-full max-w-[480px] bg-charcoalBar text-parchment px-2.5 py-2 border-t-2 border-rust/80 shadow-2xl pointer-events-auto flex items-center justify-between gap-1.5">
                 
                 <!-- WhatsApp & Call Quick Links -->
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1.5 shrink-0">
                     <a 
                         id="footer-wa-link"
                         href="https://wa.me/918696176974?text=Hi%20Sandwich%20Junction!%20I'm%20checking%20your%20menu." 
                         target="_blank"
                         rel="noopener"
-                        class="flex items-center gap-1.5 bg-[#1F4E38] hover:bg-[#276347] active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-emerald-500/30 transition"
+                        class="flex items-center gap-1.5 bg-[#1F4E38] hover:bg-[#276347] active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-emerald-500/30 transition shrink-0"
                     >
-                        <svg class="w-4 h-4 text-[#4ADE80] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 text-[#4ADE80] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.556 4.119 1.528 5.847l-1.528 5.581 5.713-1.498c1.676.912 3.597 1.434 5.643 1.434 6.627 0 12-5.373 12-12s-5.373-12-12.356-12z"/>
                         </svg>
-                        <div class="leading-none">
-                            <span class="block text-[9px] text-amber-300 font-bold uppercase tracking-wider">WhatsApp</span>
-                            <span id="footer-phone-1" class="font-poster text-xs font-bold tracking-wide">86961 76974</span>
+                        <div class="leading-tight">
+                            <span class="block text-[8.5px] text-amber-300 font-bold uppercase tracking-wider whitespace-nowrap">WhatsApp</span>
+                            <span id="footer-phone-1" class="font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
                         </div>
                     </a>
 
                     <a 
                         id="footer-call-link"
                         href="tel:+918696176974" 
-                        class="flex items-center gap-1.5 bg-stone-800 hover:bg-stone-700 active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-stone-600 transition"
+                        class="flex items-center gap-1.5 bg-stone-800 hover:bg-stone-700 active:scale-95 text-white px-2.5 py-1.5 rounded-lg border border-stone-600 transition shrink-0"
                     >
-                        <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3 h-3 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/>
                         </svg>
-                        <div class="leading-none">
-                            <span class="block text-[9px] text-stone-300 font-bold uppercase tracking-wider">Call Us</span>
-                            <span id="footer-phone-2" class="font-poster text-xs font-bold tracking-wide">86961 76974</span>
+                        <div class="leading-tight">
+                            <span class="block text-[8.5px] text-stone-300 font-bold uppercase tracking-wider whitespace-nowrap">Call Us</span>
+                            <span id="footer-phone-2" class="font-poster text-[12px] font-bold tracking-wide whitespace-nowrap">86961 76974</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Right: Free Delivery Badge -->
-                <div class="flex items-center gap-1.5 text-right">
-                    <span class="text-lg leading-none">🛵</span>
+                <div class="flex items-center gap-1 text-right shrink-0">
+                    <span class="text-base leading-none hidden xs:inline">🛵</span>
                     <div class="leading-tight">
-                        <span class="block font-poster text-xs font-bold text-amber-400 tracking-wide uppercase">Free Delivery</span>
-                        <span id="footer-free-delivery" class="block text-[10px] font-semibold text-stone-200">Orders Above ₹199</span>
+                        <span class="block font-poster text-[11px] font-bold text-amber-400 tracking-wide uppercase whitespace-nowrap">🛵 Free Delivery</span>
+                        <span id="footer-free-delivery" class="block text-[9.5px] font-semibold text-stone-200 whitespace-nowrap">Orders Above ₹199</span>
                     </div>
                 </div>
             </div>
@@ -590,191 +590,194 @@
                     ]
                 },
                 {
-                    id: "burgers-wraps",
-                    tabLabel: "Burgers & Wraps",
+                    id: "burgers",
+                    tabLabel: "Burgers",
                     icon: "🍔",
-                    bannerTitle: "Burgers & Tortilla Wraps",
-                    bannerSub: "Crispy golden veg patties & grilled tortilla rolls",
+                    bannerTitle: "Crispy Veg Burgers",
+                    bannerSub: "Golden-fried veg patties, melted cheese & signature sauces",
                     bannerImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
-                    layout: "split",
-                    sections: [
+                    layout: "single",
+                    items: [
                         {
-                            heading: "Burgers",
-                            items: [
-                                {
-                                    name: "Cheese Burger",
-                                    desc: "Classic cheesy burger.",
-                                    price: 49,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Veg Burger",
-                                    desc: "Crispy veg patty with fresh veggies.",
-                                    price: 39,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Cheese Burger",
+                            desc: "Classic cheesy burger.",
+                            price: 49,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
                         },
                         {
-                            heading: "Wraps",
-                            items: [
-                                {
-                                    name: "Cheese Corn Wrap",
-                                    desc: "Cheesy corn & crunchy veggies.",
-                                    price: 89,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Paneer Wrap",
-                                    desc: "Spiced paneer tikka with veggies.",
-                                    price: 79,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Veg Wrap",
-                                    desc: "Fresh veggies & signature sauces.",
-                                    price: 69,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Veg Burger",
+                            desc: "Crispy veg patty with fresh veggies.",
+                            price: 39,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
                         }
                     ]
                 },
                 {
-                    id: "pasta-noodles",
-                    tabLabel: "Pasta & Noodles",
+                    id: "wraps",
+                    tabLabel: "Wraps",
+                    icon: "🌯",
+                    bannerTitle: "Grilled Tortilla Wraps",
+                    bannerSub: "Warm toasted wraps loaded with spiced fillings & sauces",
+                    bannerImage: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
+                    layout: "single",
+                    items: [
+                        {
+                            name: "Cheese Corn Wrap",
+                            desc: "Cheesy corn & crunchy veggies.",
+                            price: 89,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Paneer Wrap",
+                            desc: "Spiced paneer tikka with veggies.",
+                            price: 79,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Veg Wrap",
+                            desc: "Fresh veggies & signature sauces.",
+                            price: 69,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?auto=format&fit=crop&w=800&q=80"
+                        }
+                    ]
+                },
+                {
+                    id: "pasta",
+                    tabLabel: "Pasta",
                     icon: "🍝",
-                    bannerTitle: "Pasta & Wok Noodles",
-                    bannerSub: "Rich Italian red sauce penne & street-style Hakka noodles",
+                    bannerTitle: "Italian Red Sauce Pasta",
+                    bannerSub: "Penne tossed in rich, slow-simmered Italian herb tomato sauce",
                     bannerImage: "https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=900&q=80",
-                    layout: "split",
-                    sections: [
+                    layout: "single",
+                    items: [
                         {
-                            heading: "Pasta",
-                            items: [
-                                {
-                                    name: "Classic Red Sauce Pasta",
-                                    desc: "Classic Italian herb red sauce.",
-                                    price: 69,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Cheese Loaded Red Sauce Pasta",
-                                    desc: "Creamy & cheesy red sauce penne.",
-                                    price: 69,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Classic Red Sauce Pasta",
+                            desc: "Classic Italian herb red sauce.",
+                            price: 69,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=800&q=80"
                         },
                         {
-                            heading: "Noodles",
-                            items: [
-                                {
-                                    name: "Veg Noodles",
-                                    desc: "Stir-fried crisp veggies & noodles.",
-                                    price: 79,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Chilly Garlic Noodles",
-                                    desc: "Hot, smoky garlic & full of flavor.",
-                                    price: 99,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Cheese Loaded Red Sauce Pasta",
+                            desc: "Creamy & cheesy red sauce penne.",
+                            price: 69,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
                         }
                     ]
                 },
                 {
-                    id: "snacks-drinks",
-                    tabLabel: "Snacks & Drinks",
-                    icon: "🍟",
-                    bannerTitle: "Snacks & Beverages",
-                    bannerSub: "Crispy golden sides, thick milkshakes & chilled coffee",
-                    bannerImage: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80",
-                    layout: "split",
-                    sections: [
+                    id: "noodles",
+                    tabLabel: "Noodles",
+                    icon: "🍜",
+                    bannerTitle: "Wok-Tossed Noodles",
+                    bannerSub: "High-flame street-style Hakka & smoky chilli garlic noodles",
+                    bannerImage: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=80",
+                    layout: "single",
+                    items: [
                         {
-                            heading: "Snacks",
-                            items: [
-                                {
-                                    name: "French Fries",
-                                    desc: "Crispy & golden salted fries.",
-                                    price: 49,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Crispy Nuggets",
-                                    desc: "Golden & crunchy veg nuggets.",
-                                    price: 59,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Veggie Sticks",
-                                    desc: "Crispy seasoned veggie fingers.",
-                                    price: 69,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Chilli Potato",
-                                    desc: "Spicy wok-tossed honey chilli potato.",
-                                    price: 79,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Veg Noodles",
+                            desc: "Stir-fried crisp veggies & noodles.",
+                            price: 79,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
                         },
                         {
-                            heading: "Beverages",
-                            items: [
-                                {
-                                    name: "Cold Coffee",
-                                    desc: "Chilled, frothy & refreshing.",
-                                    price: 49,
-                                    bestSeller: true,
-                                    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Chocolate Shake",
-                                    desc: "Rich indulgent chocolate shake.",
-                                    price: 69,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Vanilla Shake",
-                                    desc: "Classic creamy vanilla shake.",
-                                    price: 69,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1568901839119-631418a3910d?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Strawberry Shake",
-                                    desc: "Sweet berry strawberry shake.",
-                                    price: 59,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80"
-                                },
-                                {
-                                    name: "Lemonade",
-                                    desc: "Freshly squeezed lime cooler.",
-                                    price: 39,
-                                    bestSeller: false,
-                                    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
-                                }
-                            ]
+                            name: "Chilly Garlic Noodles",
+                            desc: "Hot, smoky garlic & full of flavor.",
+                            price: 99,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"
+                        }
+                    ]
+                },
+                {
+                    id: "snacks",
+                    tabLabel: "Snacks",
+                    icon: "🍟",
+                    bannerTitle: "Crispy Sides & Snacks",
+                    bannerSub: "Golden fries, crunchy nuggets, veggie fingers & chilli potato",
+                    bannerImage: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=900&q=80",
+                    layout: "single",
+                    items: [
+                        {
+                            name: "French Fries",
+                            desc: "Crispy & golden salted fries.",
+                            price: 49,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Crispy Nuggets",
+                            desc: "Golden & crunchy veg nuggets.",
+                            price: 59,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Veggie Sticks",
+                            desc: "Crispy seasoned veggie fingers.",
+                            price: 69,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Chilli Potato",
+                            desc: "Spicy wok-tossed honey chilli potato.",
+                            price: 79,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=800&q=80"
+                        }
+                    ]
+                },
+                {
+                    id: "beverages",
+                    tabLabel: "Drinks",
+                    icon: "🧋",
+                    bannerTitle: "Shakes & Beverages",
+                    bannerSub: "Thick creamy milkshakes, frothy cold coffee & fresh lemonade",
+                    bannerImage: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80",
+                    layout: "single",
+                    items: [
+                        {
+                            name: "Cold Coffee",
+                            desc: "Chilled, frothy & refreshing.",
+                            price: 49,
+                            bestSeller: true,
+                            image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Chocolate Shake",
+                            desc: "Rich indulgent chocolate shake.",
+                            price: 69,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Vanilla Shake",
+                            desc: "Classic creamy vanilla shake.",
+                            price: 69,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1568901839119-631418a3910d?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Strawberry Shake",
+                            desc: "Sweet berry strawberry shake.",
+                            price: 59,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80"
+                        },
+                        {
+                            name: "Lemonade",
+                            desc: "Freshly squeezed lime cooler.",
+                            price: 39,
+                            bestSeller: false,
+                            image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
                         }
                     ]
                 }
@@ -793,7 +796,7 @@
            ============================================================================ */
         function initMenuApp() {
             // Load locally saved staff edits if present
-            const saved = localStorage.getItem('SJ_MENU_DATA_V2');
+            const saved = localStorage.getItem('SJ_MENU_DATA_V3');
             if (saved) {
                 try {
                     MENU_DATA = JSON.parse(saved);
@@ -837,14 +840,14 @@
                         id="tab-btn-${tab.id}"
                         role="tab"
                         aria-selected="${isActive}"
-                        class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all select-none ${
+                        class="w-full flex items-center justify-center gap-1 py-[7px] px-1 rounded-xl transition-all select-none whitespace-nowrap ${
                             isActive
-                            ? 'bg-forest text-parchment shadow-sm scale-[1.02] border border-forest'
-                            : 'bg-white/80 text-espresso hover:bg-white border border-amber-950/15'
+                            ? 'bg-forest text-parchment shadow-sm border border-rust ring-1 ring-rust/50'
+                            : 'bg-white/85 text-espresso hover:bg-white border border-amber-950/15'
                         }"
                     >
-                        <span class="text-sm leading-none">${tab.icon}</span>
-                        <span class="font-poster uppercase tracking-wider">${tab.tabLabel}</span>
+                        <span class="text-[11px] leading-none shrink-0">${tab.icon}</span>
+                        <span class="font-poster text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.03em] leading-none">${tab.tabLabel}</span>
                     </button>
                 `;
             }).join('');
@@ -854,11 +857,6 @@
             activeTabId = tabId;
             renderCategoryTabs();
             renderActiveCategoryStage();
-
-            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
-            if (activeBtn) {
-                activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
         }
 
         function renderItemRowSingle(item) {
@@ -870,20 +868,20 @@
             return `
                 <div 
                     onclick="openDishLightbox('${safeName}', '${safeDesc}', '${safeImg}', '${priceLabel}')"
-                    class="group py-1.5 cursor-pointer hover:bg-amber-900/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
+                    class="group py-2 cursor-pointer hover:bg-amber-900/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
                 >
-                    <div class="flex items-baseline justify-between">
-                        <div class="flex items-center gap-1.5 min-w-0 pr-1">
-                            <span class="font-poster text-[15px] font-bold uppercase text-espresso tracking-wide group-hover:text-rust transition truncate">
+                    <div class="flex items-baseline justify-between gap-1.5">
+                        <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 min-w-0">
+                            <span class="font-poster text-[14.5px] sm:text-[15px] font-bold uppercase text-espresso tracking-wide group-hover:text-rust transition leading-snug">
                                 ${item.name}
                             </span>
-                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
+                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
                             ${item.image ? `<span class="text-[10px] text-stone-400 group-hover:text-rust transition">📷</span>` : ''}
                         </div>
                         <div class="dotted-leader"></div>
-                        <span class="font-poster text-[16px] font-bold text-espresso shrink-0">₹${item.price}</span>
+                        <span class="font-poster text-[15px] sm:text-[16px] font-bold text-espresso shrink-0">₹${item.price}</span>
                     </div>
-                    ${item.desc ? `<p class="text-[11px] text-stone-600 leading-snug mt-0.5 line-clamp-1">${item.desc}</p>` : ''}
+                    ${item.desc ? `<p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-6">${item.desc}</p>` : ''}
                 </div>
             `;
         }
@@ -922,9 +920,9 @@
             // LAYOUT 1: DUAL COLUMN (HALF / FULL SANDWICHES)
             if (tab.layout === "dual") {
                 html += `
-                    <div class="flex items-center justify-end gap-5 px-1 pb-1 border-b border-amber-950/15 text-[11px] font-poster font-bold uppercase tracking-wider text-forest">
-                        <span class="w-11 text-right">Half</span>
-                        <span class="w-11 text-right">Full</span>
+                    <div class="flex items-center justify-end gap-3 px-1 pb-1 border-b border-amber-950/15 text-[11px] font-poster font-bold uppercase tracking-wider text-forest">
+                        <span class="w-9 text-right">Half</span>
+                        <span class="w-10 text-right">Full</span>
                     </div>
                     <div class="divide-y divide-dashed divide-amber-950/15">
                         ${tab.items.map(item => {
@@ -937,21 +935,21 @@
                                     onclick="openDishLightbox('${safeName}', '${safeDesc}', '${safeImg}', '${priceStr}')"
                                     class="py-2 cursor-pointer group hover:bg-amber-900/[0.04] rounded-lg px-1.5 -mx-1.5 transition"
                                 >
-                                    <div class="flex items-baseline justify-between gap-2">
-                                        <div class="flex items-center gap-1.5 min-w-0">
-                                            <h4 class="font-poster text-[15px] font-bold uppercase text-espresso group-hover:text-rust transition truncate">
+                                    <div class="flex items-baseline justify-between gap-1">
+                                        <div class="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 min-w-0">
+                                            <h4 class="font-poster text-[14.5px] sm:text-[15px] font-bold uppercase text-espresso group-hover:text-rust transition leading-snug">
                                                 ${item.name}
                                             </h4>
-                                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
+                                            ${item.bestSeller ? `<span class="shrink-0 bg-rust text-white font-poster text-[8.5px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider">Best Seller</span>` : ''}
                                             <span class="text-[10px] text-stone-400 group-hover:text-rust">📷</span>
                                         </div>
                                         <div class="dotted-leader"></div>
-                                        <div class="flex items-center gap-5 shrink-0 font-poster text-[16px] font-bold text-espresso">
-                                            <span class="w-11 text-right">₹${item.priceHalf}</span>
-                                            <span class="w-11 text-right text-forest">₹${item.priceFull}</span>
+                                        <div class="flex items-center gap-3 shrink-0 font-poster text-[15px] sm:text-[16px] font-bold text-espresso">
+                                            <span class="w-9 text-right">₹${item.priceHalf}</span>
+                                            <span class="w-10 text-right text-forest">₹${item.priceFull}</span>
                                         </div>
                                     </div>
-                                    <p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-20">${item.desc || ''}</p>
+                                    <p class="text-[11px] text-stone-600 leading-snug mt-0.5 pr-12">${item.desc || ''}</p>
                                 </div>
                             `;
                         }).join('')}
@@ -975,12 +973,12 @@
                                     class="cursor-pointer group bg-[#F5EBDC] hover:bg-[#EFE2CE] border border-amber-950/20 rounded-xl p-2.5 flex flex-col justify-between transition shadow-2xs relative overflow-hidden"
                                 >
                                     <div>
-                                        <div class="flex items-center justify-between gap-1 pb-1.5 border-b border-amber-950/15">
-                                            <div class="flex items-center gap-1.5 min-w-0">
-                                                <span class="w-5 h-5 rounded bg-forest text-white font-poster text-xs font-bold flex items-center justify-center shrink-0">
+                                        <div class="flex items-start justify-between gap-1 pb-1.5 border-b border-amber-950/15">
+                                            <div class="flex items-start gap-1.5 min-w-0">
+                                                <span class="w-5 h-5 rounded bg-forest text-white font-poster text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                                                     ${item.num || '★'}
                                                 </span>
-                                                <h4 class="font-poster text-sm font-bold uppercase text-espresso group-hover:text-rust transition truncate">
+                                                <h4 class="font-poster text-[13.5px] font-bold uppercase text-espresso group-hover:text-rust transition leading-tight">
                                                     ${item.name}
                                                 </h4>
                                             </div>
@@ -1042,9 +1040,9 @@
         function renderAddonsStrip() {
             const container = document.getElementById('addons-strip-items');
             container.innerHTML = (MENU_DATA.addons || []).map(ad => `
-                <span class="inline-flex items-center gap-1 bg-white/80 px-2 py-0.5 rounded-md border border-amber-950/15">
-                    <span class="font-poster uppercase tracking-wide text-espresso">${ad.name}</span>
-                    <span class="font-poster text-rust">₹${ad.price}</span>
+                <span class="inline-flex items-center gap-1.5 bg-white/85 px-2.5 py-1 rounded-md border border-amber-950/15 whitespace-nowrap">
+                    <span class="font-poster uppercase tracking-wide text-espresso text-[11.5px]">${ad.name}</span>
+                    <span class="font-poster text-rust text-[12px]">₹${ad.price}</span>
                 </span>
             `).join('');
         }
@@ -1134,73 +1132,202 @@
 
             if (tab.layout === "split") {
                 tab.sections.forEach((sec, sIdx) => {
-                    html += `<div class="font-poster font-bold text-sm uppercase text-forest pt-2">${sec.heading}</div>`;
-                    sec.items.forEach((item, iIdx) => {
-                        html += buildAdminItemCard(item, `MENU_DATA.tabs[${idx}].sections[${sIdx}].items[${iIdx}]`, false);
-                    });
+                    html += `
+                        <div class="pt-2">
+                            <div class="font-poster font-bold text-sm uppercase text-forest mb-2 flex items-center justify-between border-b border-stone-200 pb-1">
+                                <span>❧ ${sec.heading}</span>
+                                <span class="text-[10px] font-sans font-semibold text-stone-400">${sec.items.length} items</span>
+                            </div>
+                            <div class="space-y-2.5">
+                                ${sec.items.map((item, iIdx) => buildAdminItemCard(item, idx, sIdx, iIdx, tab.layout)).join('')}
+                            </div>
+                            <button 
+                                type="button"
+                                onclick="addAdminMenuItem(${idx}, ${sIdx})"
+                                class="mt-2 w-full py-2 rounded-xl border-2 border-dashed border-forest/35 hover:border-forest bg-emerald-950/5 hover:bg-emerald-950/10 text-forest font-bold text-xs transition flex items-center justify-center gap-1.5"
+                            >
+                                <span>+ Add New Item to ${sec.heading}</span>
+                            </button>
+                        </div>
+                    `;
                 });
             } else {
-                const isDual = tab.layout === "dual";
-                tab.items.forEach((item, iIdx) => {
-                    html += buildAdminItemCard(item, `MENU_DATA.tabs[${idx}].items[${iIdx}]`, isDual);
-                });
+                html += `
+                    <div class="space-y-2.5">
+                        ${tab.items.map((item, iIdx) => buildAdminItemCard(item, idx, null, iIdx, tab.layout)).join('')}
+                    </div>
+                    <button 
+                        type="button"
+                        onclick="addAdminMenuItem(${idx}, null)"
+                        class="mt-3 w-full py-2.5 rounded-xl border-2 border-dashed border-forest/40 hover:border-forest bg-emerald-950/5 hover:bg-emerald-950/10 text-forest font-bold text-xs transition flex items-center justify-center gap-1.5"
+                    >
+                        <span>${tab.layout === 'combos' ? '+ Add New Combo' : `+ Add New Item to ${tab.tabLabel}`}</span>
+                    </button>
+                `;
             }
 
             container.innerHTML = html;
         }
 
-        function buildAdminItemCard(item, pathExpr, isDual) {
+        function buildAdminItemCard(item, tabIdx, secIdx, itemIdx, layout) {
+            const pathExpr = secIdx !== null && secIdx !== undefined
+                ? `MENU_DATA.tabs[${tabIdx}].sections[${secIdx}].items[${itemIdx}]`
+                : `MENU_DATA.tabs[${tabIdx}].items[${itemIdx}]`;
+            const isDual = layout === "dual";
+            const isCombo = layout === "combos";
+            const safeNameAttr = (item.name || '').replace(/"/g, '&quot;');
+            const safeDescAttr = (item.desc || '').replace(/"/g, '&quot;');
+            const safeImgAttr = (item.image || '').replace(/"/g, '&quot;');
+            const safeNumAttr = (item.num || '').replace(/"/g, '&quot;');
+
             return `
                 <div class="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs space-y-2">
                     <div class="flex items-center justify-between gap-2">
+                        ${isCombo ? `
+                            <input 
+                                type="text" 
+                                value="${safeNumAttr}" 
+                                oninput="${pathExpr}.num = this.value"
+                                class="w-8 text-center font-poster font-bold text-xs bg-forest text-white rounded py-1 shrink-0"
+                                title="Combo Badge Number"
+                                placeholder="#"
+                            >
+                        ` : ''}
                         <input 
                             type="text" 
-                            value="${item.name || ''}" 
-                            onchange="${pathExpr}.name = this.value"
-                            class="font-bold text-espresso border-b border-stone-300 focus:border-forest focus:outline-none flex-1 py-0.5"
-                            placeholder="Item Name"
+                            value="${safeNameAttr}" 
+                            oninput="${pathExpr}.name = this.value"
+                            class="font-bold text-espresso border-b border-stone-300 focus:border-forest focus:outline-none flex-1 py-0.5 min-w-0"
+                            placeholder="${isCombo ? 'Combo Name (e.g. Feast For One)' : 'Dish Name'}"
                         >
-                        <label class="inline-flex items-center gap-1 text-[10px] font-bold text-rust cursor-pointer">
+                        <label class="inline-flex items-center gap-1 text-[10px] font-bold text-rust cursor-pointer shrink-0">
                             <input type="checkbox" ${item.bestSeller ? 'checked' : ''} onchange="${pathExpr}.bestSeller = this.checked">
                             <span>Best Seller</span>
                         </label>
+                        <button 
+                            type="button"
+                            onclick="deleteAdminMenuItem(${tabIdx}, ${secIdx === null ? 'null' : secIdx}, ${itemIdx})"
+                            class="text-[10px] font-bold text-red-600 hover:bg-red-50 border border-red-200 rounded-md px-2 py-1 shrink-0 transition"
+                            title="Remove this item"
+                        >
+                            🗑️ Remove
+                        </button>
                     </div>
 
                     <input 
                         type="text" 
-                        value="${item.desc || ''}" 
-                        onchange="${pathExpr}.desc = this.value"
+                        value="${safeDescAttr}" 
+                        oninput="${pathExpr}.desc = this.value"
                         class="w-full text-[11px] text-stone-600 border border-stone-200 rounded-lg px-2 py-1"
-                        placeholder="Short description"
+                        placeholder="${isCombo ? 'Combo items separated by • (e.g. Veg Burger • Fries • Cold Coffee)' : 'Short description'}"
                     >
 
                     <div class="grid ${isDual ? 'grid-cols-3' : 'grid-cols-2'} gap-2 items-center">
                         ${isDual ? `
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Half Price (₹)</label>
-                                <input type="number" value="${item.priceHalf}" onchange="${pathExpr}.priceHalf = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input type="number" value="${item.priceHalf ?? 0}" oninput="${pathExpr}.priceHalf = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
                             </div>
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Full Price (₹)</label>
-                                <input type="number" value="${item.priceFull}" onchange="${pathExpr}.priceFull = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input type="number" value="${item.priceFull ?? 0}" oninput="${pathExpr}.priceFull = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
                             </div>
                         ` : `
                             <div>
                                 <label class="block text-[9px] font-bold uppercase text-stone-400">Price (₹)</label>
-                                <input type="number" value="${item.price}" onchange="${pathExpr}.price = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
+                                <input type="number" value="${item.price ?? 0}" oninput="${pathExpr}.price = Number(this.value)" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-bold">
                             </div>
                         `}
                         <div>
                             <label class="block text-[9px] font-bold uppercase text-stone-400">Realistic Dish Photo URL</label>
-                            <input type="text" value="${item.image || ''}" onchange="${pathExpr}.image = this.value" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-mono text-[10px]" placeholder="https://...">
+                            <input type="text" value="${safeImgAttr}" oninput="${pathExpr}.image = this.value" class="w-full border border-stone-300 rounded-lg px-2 py-1 font-mono text-[10px]" placeholder="https://...">
                         </div>
                     </div>
                 </div>
             `;
         }
 
+        function addAdminMenuItem(tabIdx, secIdx) {
+            const tab = MENU_DATA.tabs[tabIdx];
+            let newItem;
+
+            if (tab.layout === "dual") {
+                newItem = {
+                    name: "New Sandwich",
+                    desc: "Freshly grilled with signature spices & veggies.",
+                    priceHalf: 59,
+                    priceFull: 99,
+                    bestSeller: false,
+                    image: tab.bannerImage || "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+                };
+                tab.items.push(newItem);
+            } else if (tab.layout === "combos") {
+                const nextNum = String((tab.items?.length || 0) + 1);
+                newItem = {
+                    num: nextNum,
+                    name: "New Special Combo",
+                    desc: "Main Dish • French Fries • Cold Coffee",
+                    price: 199,
+                    bestSeller: false,
+                    image: tab.bannerImage || "https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=800&q=80"
+                };
+                tab.items.push(newItem);
+            } else if (tab.layout === "split" && secIdx !== null && secIdx !== undefined) {
+                const targetSec = tab.sections[secIdx];
+                newItem = {
+                    name: `New ${targetSec.heading} Item`,
+                    desc: "Freshly prepared to order.",
+                    price: 69,
+                    bestSeller: false,
+                    image: tab.bannerImage || "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                };
+                targetSec.items.push(newItem);
+            } else {
+                newItem = {
+                    name: `New ${tab.tabLabel} Dish`,
+                    desc: "Freshly prepared with premium ingredients.",
+                    price: 99,
+                    bestSeller: false,
+                    image: tab.bannerImage || "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+                };
+                tab.items.push(newItem);
+            }
+
+            renderAdminCategoryEditor(tabIdx);
+        }
+
+        function deleteAdminMenuItem(tabIdx, secIdx, itemIdx) {
+            const tab = MENU_DATA.tabs[tabIdx];
+            if (tab.layout === "split" && secIdx !== null && secIdx !== undefined) {
+                tab.sections[secIdx].items.splice(itemIdx, 1);
+            } else {
+                tab.items.splice(itemIdx, 1);
+            }
+            renderAdminCategoryEditor(tabIdx);
+        }
+
         function saveAdminPreview() {
-            localStorage.setItem('SJ_MENU_DATA_V2', JSON.stringify(MENU_DATA));
+            localStorage.setItem('SJ_MENU_DATA_V3', JSON.stringify(MENU_DATA));
+            renderBrandAndFooter();
+            renderCategoryTabs();
+            renderActiveCategoryStage();
+            renderAddonsStrip();
+            closeAdminModal();
+        }
+
+        function resetMenuToFactory() {
+            localStorage.removeItem('SJ_MENU_DATA_V3');
+            MENU_DATA = JSON.parse(JSON.stringify(FACTORY_BACKUP));
+            renderBrandAndFooter();
+            renderCategoryTabs();
+            renderActiveCategoryStage();
+            renderAddonsStrip();
+            closeAdminModal();
+        }
+
+        function downloadUpdatedHtmlFile() {
+            // Save to local preview first
+            localStorage.setItem('SJ_MENU_DATA_V3', JSON.stringify(MENU_DATA));
             renderBrandAndFooter();
             renderCategoryTabs();
             renderActiveCategoryStage();
