@@ -37,7 +37,7 @@
 </head>
 <body class="min-h-screen pb-24 selection:bg-[#1B4332] selection:text-white">
 
-  <!-- ADMIN TOP BAR (Only visible with ?key=sandwich2026) -->
+  <!-- ADMIN TOP BAR -->
   <div id="adminBar" class="hidden sticky top-0 z-50 bg-[#1B4332] text-white px-4 py-2.5 shadow-md flex items-center justify-between">
     <div class="flex items-center gap-2 text-xs font-semibold tracking-wide">
       <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -68,7 +68,6 @@
 
     <!-- HEADER: OG LOGO & HOUSE SPECIAL -->
     <div class="grid grid-cols-12 gap-2 items-center py-2">
-      <!-- Left: Original Style Stacked Logo -->
       <div class="col-span-7 flex flex-col items-center text-center">
         <svg class="w-11 h-11 mb-0.5" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 22L32 12L52 22L32 32L12 22Z" fill="#F3D5B5" stroke="#1F2937" stroke-width="2.5" stroke-linejoin="round"/>
@@ -88,7 +87,6 @@
         </div>
       </div>
 
-      <!-- Right: House Special Card -->
       <div class="col-span-5">
         <div onclick="previewHeroPhoto()" class="relative rounded-2xl overflow-hidden shadow-md border-2 border-white aspect-square cursor-pointer group bg-stone-200">
           <img id="heroSpecialImg" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="House Special" class="w-full h-full object-cover group-active:scale-105 transition duration-200" />
@@ -101,13 +99,10 @@
     </div>
 
     <!-- 3x3 PRIORITY CATEGORY GRID -->
-    <div id="categoryGrid" class="grid grid-cols-3 gap-1.5 my-3 py-2.5 border-y border-stone-200/90">
-      <!-- Rendered dynamically by JS -->
-    </div>
+    <div id="categoryGrid" class="grid grid-cols-3 gap-1.5 my-3 py-2.5 border-y border-stone-200/90"></div>
 
     <!-- ACTIVE CATEGORY CARD -->
     <div class="bg-[#FAF5EC] border border-stone-200/90 rounded-2xl p-3 shadow-sm">
-      <!-- Category Banner -->
       <div class="relative h-28 rounded-xl overflow-hidden mb-3 bg-stone-800">
         <img id="catBannerImg" src="" alt="Category Banner" class="w-full h-full object-cover opacity-85" />
         <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20"></div>
@@ -121,7 +116,6 @@
         </div>
       </div>
 
-      <!-- Dish List Container -->
       <div id="dishListContainer"></div>
     </div>
 
@@ -132,9 +126,7 @@
         <span>ADD-ONS</span>
         <span class="text-[#C84B31]">✦</span>
       </div>
-      <div id="addonsContainer" class="flex items-center gap-2 flex-wrap justify-end">
-        <!-- Populated by JS -->
-      </div>
+      <div id="addonsContainer" class="flex items-center gap-2 flex-wrap justify-end"></div>
     </div>
 
   </div>
@@ -187,24 +179,21 @@
     </div>
   </div>
 
-  <!-- CLOUD MENU MANAGER MODAL (NO RESET BUTTONS) -->
+  <!-- CLOUD MENU MANAGER MODAL -->
   <div id="editorModal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-2.5">
     <div class="bg-[#F8F6F2] rounded-2xl max-w-lg w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-stone-300">
-      <!-- Modal Header -->
       <div class="bg-[#1B4332] text-white px-4 py-3 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-2.5">
           <span class="bg-amber-400 text-black text-[10px] font-extrabold px-2 py-1 rounded uppercase leading-tight">FIREBASE LIVE<br>SYNC</span>
           <div>
             <h3 class="font-menu text-lg font-bold tracking-wide uppercase leading-none">CLOUD MENU MANAGER</h3>
-            <p class="text-[11px] text-emerald-200 mt-0.5">Changes publish live to all QR scanners immediately</p>
+            <p class="text-[11px] text-emerald-200 mt-0.5">Changes publish live instantly</p>
           </div>
         </div>
         <button onclick="closeEditorModal()" class="w-8 h-8 rounded-full bg-white/15 text-white flex items-center justify-center font-bold">✕</button>
       </div>
 
-      <!-- Modal Scrollable Body -->
       <div class="p-3.5 overflow-y-auto space-y-4 flex-1">
-        <!-- Section 1: Contact & Add-ons -->
         <div class="bg-white rounded-xl p-3 border border-stone-200 shadow-xs space-y-2.5">
           <h4 class="font-menu text-sm font-bold uppercase text-stone-800 border-b pb-1.5">1. CONTACT, DELIVERY & ADD-ONS</h4>
           <div class="grid grid-cols-2 gap-2">
@@ -235,10 +224,8 @@
           </div>
         </div>
 
-        <!-- Section 2: Category & Dish Editor -->
         <div class="bg-white rounded-xl p-3 border border-stone-200 shadow-xs space-y-3">
           <h4 class="font-menu text-sm font-bold uppercase text-stone-800 border-b pb-1.5">2. EDIT CATEGORY DISHES & PHOTOS</h4>
-
           <div>
             <label class="text-[11px] font-bold text-stone-500 uppercase">CHOOSE CATEGORY (1 TO 9):</label>
             <select id="editorCatSelect" onchange="renderEditorCategoryItems()" class="w-full mt-1 px-3 py-2 text-xs font-bold border border-stone-300 rounded-lg bg-stone-50"></select>
@@ -249,7 +236,6 @@
             <input id="editCatBanner" type="text" oninput="updateEditorCatBanner(this.value)" class="w-full mt-1 px-2.5 py-1.5 text-xs bg-white border rounded-lg" />
           </div>
 
-          <!-- Dishes List inside Editor -->
           <div id="editorDishesList" class="space-y-2.5"></div>
 
           <button onclick="addNewDishToCurrentCategory()" class="w-full py-2 rounded-xl border-2 border-dashed border-[#1B4332] text-[#1B4332] font-bold text-xs hover:bg-emerald-50 active:scale-98 transition">
@@ -258,7 +244,6 @@
         </div>
       </div>
 
-      <!-- Modal Footer (Clean — Zero Reset Buttons) -->
       <div class="bg-white border-t border-stone-200 px-3.5 py-2.5 flex items-center justify-end gap-2 shrink-0">
         <button onclick="closeEditorModal()" class="px-4 py-2 rounded-xl bg-stone-200 text-stone-800 font-bold text-xs">Close</button>
         <button id="saveCloudBtn" onclick="saveMenuToCloud()" class="px-5 py-2 rounded-xl bg-[#1B4332] text-white font-bold text-xs shadow hover:bg-emerald-900 active:scale-95 transition">
@@ -269,17 +254,12 @@
   </div>
 
   <script>
-    // ============================================================================
-    // DIRECT FIREBASE REST CONFIG
-    // ============================================================================
+    // FIXED REST URL MATCHING YOUR 'default' DATABASE ID
     const FIREBASE_PROJECT_ID = "sandwich-junction-menu";
     const FIREBASE_API_KEY = "AIzaSyCRfEY2RzpQM8mOIWZzJWEGv2NVwbgH47s";
-    const FIRESTORE_DOC_URL = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/menu/live_store?key=${FIREBASE_API_KEY}`;
+    const FIRESTORE_DOC_URL = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/default/documents/menu/live_store?key=${FIREBASE_API_KEY}`;
     const ADMIN_SECRET_KEY = "sandwich2026";
 
-    // ============================================================================
-    // INITIAL FALLBACK MENU DATA
-    // ============================================================================
     const DEFAULT_MENU_DATA = {
       displayPhone: "86961 76974",
       waPhone: "918696176974",
@@ -427,9 +407,6 @@
     let MENU_STATE = JSON.parse(JSON.stringify(DEFAULT_MENU_DATA));
     let activeCategoryIndex = 0;
 
-    // ============================================================================
-    // INITIALIZE & FETCH LIVE CLOUD DATA
-    // ============================================================================
     async function initApp() {
       const params = new URLSearchParams(window.location.search);
       if (params.get("key") === ADMIN_SECRET_KEY) {
@@ -452,9 +429,6 @@
       }
     }
 
-    // ============================================================================
-    // RENDER MENU UI
-    // ============================================================================
     function renderAll() {
       document.getElementById("heroSpecialImg").src = MENU_STATE.heroPhoto || DEFAULT_MENU_DATA.heroPhoto;
       document.getElementById("footerWaPhone").textContent = MENU_STATE.displayPhone;
@@ -556,9 +530,6 @@
       }
     }
 
-    // ============================================================================
-    // PHOTO PREVIEW MODAL
-    // ============================================================================
     function openDishPhoto(catIdx, itemIdx) {
       const cat = MENU_STATE.categories[catIdx];
       const item = cat.items[itemIdx];
@@ -584,9 +555,6 @@
       document.getElementById("photoModal").classList.add("hidden");
     }
 
-    // ============================================================================
-    // CLOUD EDITOR MODAL & INSTANT REST SAVE (NO RESET FUNCTION)
-    // ============================================================================
     function openEditorModal() {
       document.getElementById("editDisplayPhone").value = MENU_STATE.displayPhone;
       document.getElementById("editWaPhone").value = MENU_STATE.waPhone;
