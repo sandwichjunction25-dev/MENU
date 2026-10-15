@@ -33,12 +33,6 @@
       font-family: 'Oswald', sans-serif;
       letter-spacing: 0.02em;
     }
-    .leader-dots {
-      background-image: radial-gradient(circle, #9CA3AF 1px, transparent 1px);
-      background-position: bottom;
-      background-size: 6px 2px;
-      background-repeat: repeat-x;
-    }
   </style>
 </head>
 <body class="min-h-screen pb-24 selection:bg-[#1B4332] selection:text-white">
@@ -76,7 +70,6 @@
     <div class="grid grid-cols-12 gap-2 items-center py-2">
       <!-- Left: Original Style Stacked Logo -->
       <div class="col-span-7 flex flex-col items-center text-center">
-        <!-- Double Decker Sandwich Icon -->
         <svg class="w-11 h-11 mb-0.5" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 22L32 12L52 22L32 32L12 22Z" fill="#F3D5B5" stroke="#1F2937" stroke-width="2.5" stroke-linejoin="round"/>
           <path d="M14 26C18 29 25 27 32 33C39 27 46 29 50 26" stroke="#15803D" stroke-width="3" stroke-linecap="round"/>
@@ -107,7 +100,7 @@
       </div>
     </div>
 
-    <!-- 3x3 PRIORITY CATEGORY GRID (ZERO HORIZONTAL SCROLL, ZERO CUTOFF) -->
+    <!-- 3x3 PRIORITY CATEGORY GRID -->
     <div id="categoryGrid" class="grid grid-cols-3 gap-1.5 my-3 py-2.5 border-y border-stone-200/90">
       <!-- Rendered dynamically by JS -->
     </div>
@@ -150,7 +143,6 @@
   <div class="fixed bottom-0 inset-x-0 z-40 bg-[#14231A] text-white border-t border-stone-700/80 px-3 py-2 shadow-2xl">
     <div class="max-w-md mx-auto flex items-center justify-between gap-2">
       <div class="flex items-center gap-1.5">
-        <!-- WhatsApp Button -->
         <a id="waLink" href="https://wa.me/918696176974" target="_blank" class="flex items-center gap-1.5 bg-[#1B4332] hover:bg-[#23533f] border border-emerald-700/60 px-2.5 py-1.5 rounded-lg active:scale-95 transition">
           <span class="text-emerald-400 text-sm">💬</span>
           <div class="leading-tight">
@@ -158,7 +150,6 @@
             <div id="footerWaPhone" class="text-xs font-bold whitespace-nowrap">86961 76974</div>
           </div>
         </a>
-        <!-- Call Button -->
         <a id="callLink" href="tel:+918696176974" class="flex items-center gap-1.5 bg-stone-800/90 hover:bg-stone-700 border border-stone-600 px-2.5 py-1.5 rounded-lg active:scale-95 transition">
           <span class="text-amber-400 text-xs">📞</span>
           <div class="leading-tight">
@@ -168,7 +159,6 @@
         </a>
       </div>
 
-      <!-- Free Delivery Info -->
       <div class="flex items-center gap-1.5 text-right shrink-0">
         <span class="text-base">🛵</span>
         <div class="leading-tight">
@@ -197,7 +187,7 @@
     </div>
   </div>
 
-  <!-- CLOUD MENU MANAGER MODAL -->
+  <!-- CLOUD MENU MANAGER MODAL (NO RESET BUTTONS) -->
   <div id="editorModal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-2.5">
     <div class="bg-[#F8F6F2] rounded-2xl max-w-lg w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-stone-300">
       <!-- Modal Header -->
@@ -206,7 +196,7 @@
           <span class="bg-amber-400 text-black text-[10px] font-extrabold px-2 py-1 rounded uppercase leading-tight">FIREBASE LIVE<br>SYNC</span>
           <div>
             <h3 class="font-menu text-lg font-bold tracking-wide uppercase leading-none">CLOUD MENU MANAGER</h3>
-            <p class="text-[11px] text-emerald-200 mt-0.5">Instant REST Sync — saves in under 1 second</p>
+            <p class="text-[11px] text-emerald-200 mt-0.5">Changes publish live to all QR scanners immediately</p>
           </div>
         </div>
         <button onclick="closeEditorModal()" class="w-8 h-8 rounded-full bg-white/15 text-white flex items-center justify-center font-bold">✕</button>
@@ -268,21 +258,19 @@
         </div>
       </div>
 
-      <!-- Modal Footer -->
-      <div class="bg-white border-t border-stone-200 px-3.5 py-2.5 flex items-center justify-between gap-2 shrink-0">
-        <div class="flex items-center gap-2">
-          <button onclick="closeEditorModal()" class="px-3.5 py-2 rounded-xl bg-stone-200 text-stone-800 font-bold text-xs">Close</button>
-          <button id="saveCloudBtn" onclick="saveMenuToCloud()" class="px-4 py-2 rounded-xl bg-[#1B4332] text-white font-bold text-xs shadow hover:bg-emerald-900 active:scale-95 transition">
-            ☁️ Save & Publish Live
-          </button>
-        </div>
+      <!-- Modal Footer (Clean — Zero Reset Buttons) -->
+      <div class="bg-white border-t border-stone-200 px-3.5 py-2.5 flex items-center justify-end gap-2 shrink-0">
+        <button onclick="closeEditorModal()" class="px-4 py-2 rounded-xl bg-stone-200 text-stone-800 font-bold text-xs">Close</button>
+        <button id="saveCloudBtn" onclick="saveMenuToCloud()" class="px-5 py-2 rounded-xl bg-[#1B4332] text-white font-bold text-xs shadow hover:bg-emerald-900 active:scale-95 transition">
+          ☁️ Save & Publish Live
+        </button>
       </div>
     </div>
   </div>
 
   <script>
     // ============================================================================
-    // DIRECT FIREBASE REST CONFIG (Zero WebChannel Hang on Mobile 5G)
+    // DIRECT FIREBASE REST CONFIG
     // ============================================================================
     const FIREBASE_PROJECT_ID = "sandwich-junction-menu";
     const FIREBASE_API_KEY = "AIzaSyCRfEY2RzpQM8mOIWZzJWEGv2NVwbgH47s";
@@ -290,7 +278,7 @@
     const ADMIN_SECRET_KEY = "sandwich2026";
 
     // ============================================================================
-    // DEFAULT MENU DATA (Pre-loaded from your Sandwich Junction poster)
+    // INITIAL FALLBACK MENU DATA
     // ============================================================================
     const DEFAULT_MENU_DATA = {
       displayPhone: "86961 76974",
@@ -308,7 +296,7 @@
           icon: "🥪",
           title: "SIGNATURE SANDWICHES",
           subtitle: "Grilled golden with molten cheese & farm-fresh veggies",
-          type: "dual", // Half & Full
+          type: "dual",
           banner: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
           items: [
             { name: "Cheese Corn Sandwich", desc: "Sweet corn, creamy cheese & herbs. Simply irresistible.", half: "69", full: "109", bestSeller: true, img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" },
@@ -443,16 +431,13 @@
     // INITIALIZE & FETCH LIVE CLOUD DATA
     // ============================================================================
     async function initApp() {
-      // Check URL secret key for Admin Mode
       const params = new URLSearchParams(window.location.search);
       if (params.get("key") === ADMIN_SECRET_KEY) {
         document.getElementById("adminBar").classList.remove("hidden");
       }
 
-      // Render default immediately so customer sees zero blank screen
       renderAll();
 
-      // Fetch latest live menu from Firebase REST API
       try {
         const res = await fetch(FIRESTORE_DOC_URL, { cache: "no-store" });
         if (res.ok) {
@@ -471,7 +456,6 @@
     // RENDER MENU UI
     // ============================================================================
     function renderAll() {
-      // Header & Footer info
       document.getElementById("heroSpecialImg").src = MENU_STATE.heroPhoto || DEFAULT_MENU_DATA.heroPhoto;
       document.getElementById("footerWaPhone").textContent = MENU_STATE.displayPhone;
       document.getElementById("footerCallPhone").textContent = MENU_STATE.displayPhone;
@@ -479,7 +463,6 @@
       document.getElementById("waLink").href = `https://wa.me/${MENU_STATE.waPhone.replace(/\D/g, '')}`;
       document.getElementById("callLink").href = `tel:+${MENU_STATE.waPhone.replace(/\D/g, '')}`;
 
-      // Add-Ons
       const addonsEl = document.getElementById("addonsContainer");
       addonsEl.innerHTML = MENU_STATE.addons.map(a => `
         <div class="bg-white border border-stone-200/90 px-2.5 py-1 rounded-lg flex items-center gap-2 shadow-2xs">
@@ -524,7 +507,6 @@
       const container = document.getElementById("dishListContainer");
 
       if (cat.type === "dual") {
-        // Half / Full Table Header
         let html = `
           <div class="flex items-center justify-end gap-5 px-1 pb-1.5 border-b border-stone-200 text-[11px] font-menu font-bold tracking-wider text-[#1B4332]">
             <span class="w-11 text-right">HALF</span>
@@ -553,7 +535,6 @@
         html += `</div>`;
         container.innerHTML = html;
       } else {
-        // Single Price List
         let html = `<div class="divide-y divide-stone-200/70">`;
         html += cat.items.map((item, i) => `
           <div onclick="openDishPhoto(${activeCategoryIndex}, ${i})" class="py-2.5 px-1 flex items-start justify-between gap-3 cursor-pointer active:bg-stone-200/40 rounded-lg transition">
@@ -604,7 +585,7 @@
     }
 
     // ============================================================================
-    // CLOUD EDITOR MODAL & INSTANT REST SAVE
+    // CLOUD EDITOR MODAL & INSTANT REST SAVE (NO RESET FUNCTION)
     // ============================================================================
     function openEditorModal() {
       document.getElementById("editDisplayPhone").value = MENU_STATE.displayPhone;
@@ -646,6 +627,7 @@
     }
 
     function removeAddonRow(idx) {
+      if (!confirm("Remove this add-on?")) return;
       MENU_STATE.addons.splice(idx, 1);
       renderEditorAddons();
     }
@@ -728,22 +710,16 @@
     }
 
     function deleteDish(catIdx, itemIdx) {
+      const dishName = MENU_STATE.categories[catIdx].items[itemIdx].name;
+      if (!confirm(`Delete "${dishName}" from the menu?`)) return;
       MENU_STATE.categories[catIdx].items.splice(itemIdx, 1);
       renderEditorCategoryItems();
-    }
-
-    function resetToDefaults() {
-      if (!confirm("Reset entire menu back to original poster defaults?")) return;
-      MENU_STATE = JSON.parse(JSON.stringify(DEFAULT_MENU_DATA));
-      openEditorModal();
-      renderAll();
     }
 
     async function saveMenuToCloud() {
       const btn = document.getElementById("saveCloudBtn");
       const originalText = btn.innerHTML;
 
-      // Capture top-level fields
       MENU_STATE.displayPhone = document.getElementById("editDisplayPhone").value.trim();
       MENU_STATE.waPhone = document.getElementById("editWaPhone").value.trim();
       MENU_STATE.deliveryBadge = document.getElementById("editDeliveryBadge").value.trim();
